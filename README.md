@@ -34,7 +34,7 @@
 - **Agentes IA 24/7** — Atención al cliente automatizada
 - **Multiidioma** — ES, FR, DE, IT, EN
 - **Responsive** — Optimizado para móvil y desktop
-- **Rendimiento** — Sitio estático exportado, máxima velocidad
+- **Rendimiento** — Sitio optimizado, máxima velocidad
 - **SEO** — Metadatos completos, sitemap y robots.txt
 
 ---
@@ -43,7 +43,7 @@
 
 | Technology | Version | Purpose |
 |---|---|---|
-| [Next.js](https://nextjs.org/) | 15.5 | React framework (static export) |
+| [Next.js](https://nextjs.org/) | 15.5 | React framework (App Router) |
 | [TypeScript](https://www.typescriptlang.org/) | 5 | Type safety |
 | [Tailwind CSS](https://tailwindcss.com/) | 3.4 | Utility-first styling |
 | [Framer Motion](https://www.framer.com/motion/) | 11 | Animations |
@@ -102,7 +102,7 @@ Flowsuite_website/
 │   ├── NeuralCanvas.tsx   # Animated background canvas
 │   └── Footer.tsx         # Site footer
 ├── robots.txt             # SEO robots directives
-├── next.config.mjs        # Next.js configuration (static export)
+├── next.config.mjs        # Next.js configuration
 ├── tailwind.config.ts     # Tailwind CSS configuration
 ├── postcss.config.js      # PostCSS configuration
 ├── tsconfig.json          # TypeScript configuration
@@ -126,7 +126,7 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 CONTACT_API_KEY=your_api_key_here
 ```
 
-> **Note:** Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser. All others are server-side only. Since this project uses `output: 'export'` (static generation), only `NEXT_PUBLIC_` variables are available at runtime.
+> **Note:** Variables prefixed with `NEXT_PUBLIC_` are exposed to the browser. All others are server-side only.
 
 ---
 
@@ -137,23 +137,21 @@ All scripts are defined in `package.json` and run with `npm run <script>`:
 | Script | Command | Description |
 |---|---|---|
 | `dev` | `next dev` | Start local development server at `http://localhost:3000` |
-| `build` | `next build` | Build and export static site to the `public/` directory |
+| `build` | `next build` | Build the production site |
 | `start` | `next start` | Serve the production build locally for preview |
-
-> **Tip:** After `npm run build`, the static output lives in the `public/` folder (configured via `distDir: 'public'` in `next.config.mjs`).
 
 ---
 
 ## 🚢 Deployment Guide
 
-This site is deployed as a **static export** on [Vercel](https://vercel.com/).
+This site is deployed on [Vercel](https://vercel.com/).
 
 ### Vercel (Recommended)
 
 1. **Connect your repository** to Vercel via the [Vercel Dashboard](https://vercel.com/dashboard).
 2. **Framework preset:** Next.js (auto-detected).
 3. **Build command:** `npm run build`
-4. **Output directory:** `public` (matches `distDir` in `next.config.mjs`)
+4. **Output directory:** `.next` (default Next.js output)
 5. **Install command:** `npm install`
 6. Click **Deploy** — Vercel automatically redeploys on every push to the main branch.
 
@@ -174,11 +172,10 @@ Update this file directly to adjust crawl rules without a code change.
 ### Manual / Self-Hosted
 
 ```bash
-# Build the static site
+# Build the site
 npm run build
 
-# The output in public/ can be served by any static host
-# e.g., nginx, Apache, Cloudflare Pages, GitHub Pages, etc.
+# The .next/ output can be served with `next start` or deployed to any Node.js host
 ```
 
 ---
@@ -187,7 +184,6 @@ npm run build
 
 This site is optimized for production out of the box:
 
-- **Static Export** — All pages are pre-rendered at build time (`output: 'export'`), resulting in zero server-side latency.
 - **Tailwind CSS purging** — Unused CSS classes are automatically removed in production builds.
 - **Framer Motion** — Animations are hardware-accelerated and only run in the browser.
 - **React Strict Mode** — Enabled (`reactStrictMode: true`) to catch potential issues during development.
@@ -220,12 +216,6 @@ npm run dev -- -p 3001
 # Check TypeScript errors without building
 npx tsc --noEmit
 ```
-
-### Static export errors (`output: 'export'`)
-
-- Dynamic routes must use `generateStaticParams()` to be included in the export.
-- API routes and middleware are not supported in static export mode.
-- Server Components that fetch data at runtime are not supported — use build-time data fetching.
 
 ### Framer Motion animations not working in production
 
