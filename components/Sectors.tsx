@@ -18,7 +18,7 @@ export default function Sectors() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="sector-tag mb-4 inline-block">Sectores</span>
-          <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
             FLOWY trabaja en <span className="gradient-text">cualquier industria</span>
           </h2>
           <p className="text-white/50 font-body text-lg max-w-lg mx-auto">
@@ -32,7 +32,7 @@ export default function Sectors() {
               <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${s.color} border border-white/5 flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform`}>
                 {s.icon}
               </div>
-              <h3 className="font-display font-600 text-white text-lg mb-1">{s.name}</h3>
+              <h3 className="font-display font-semibold text-white text-lg mb-1">{s.name}</h3>
               <p className="text-white/45 text-sm font-body">{s.desc}</p>
             </div>
           ))}

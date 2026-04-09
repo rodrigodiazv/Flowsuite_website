@@ -40,7 +40,7 @@ export default function FAQ() {
       <div className="max-w-3xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="sector-tag mb-4 inline-block">FAQ</span>
-          <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
             Preguntas <span className="gradient-text">frecuentes</span>
           </h2>
         </div>
@@ -52,7 +52,7 @@ export default function FAQ() {
                 onClick={() => setOpen(open === i ? null : i)}
                 className="w-full flex items-center justify-between p-6 text-left group"
               >
-                <span className="font-display font-600 text-white text-sm md:text-base pr-4 group-hover:text-neon transition-colors">
+                <span className="font-display font-semibold text-white text-sm md:text-base pr-4 group-hover:text-neon transition-colors">
                   {faq.q}
                 </span>
                 <div className={`w-8 h-8 rounded-lg border flex items-center justify-center flex-shrink-0 transition-all duration-300 ${
@@ -64,7 +64,7 @@ export default function FAQ() {
                 </div>
               </button>
 
-              <div className={`overflow-hidden transition-all duration-400 ${open === i ? 'max-h-48' : 'max-h-0'}`}>
+              <div className={`overflow-hidden transition-all duration-300 ${open === i ? 'max-h-48' : 'max-h-0'}`}>
                 <p className="px-6 pb-6 text-white/55 font-body text-sm leading-relaxed">
                   {faq.a}
                 </p>

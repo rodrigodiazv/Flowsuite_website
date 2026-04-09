@@ -53,7 +53,7 @@ export default function HowItWorks() {
         {/* Header */}
         <div className="text-center mb-20">
           <span className="sector-tag mb-4 inline-block">Proceso</span>
-          <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
             De cero a <span className="gradient-text">empleado digital</span>
             <br />en menos de 24 horas
           </h2>
@@ -76,7 +76,7 @@ export default function HowItWorks() {
               <div className="card-glow neon-border rounded-2xl p-8 h-full group">
                 {/* Number */}
                 <div className="flex items-center justify-between mb-6">
-                  <span className="font-mono text-5xl font-700 text-neon/15 group-hover:text-neon/30 transition-colors">
+                  <span className="font-mono text-5xl font-bold text-neon/15 group-hover:text-neon/30 transition-colors">
                     {s.num}
                   </span>
                   <div className="w-12 h-12 rounded-xl bg-neon/10 border border-neon/20 flex items-center justify-center text-neon group-hover:bg-neon/15 transition-colors">
@@ -85,7 +85,7 @@ export default function HowItWorks() {
                 </div>
 
                 <div className="sector-tag mb-3 text-xs">{s.tag}</div>
-                <h3 className="font-display text-xl font-600 text-white mb-3">{s.title}</h3>
+                <h3 className="font-display text-xl font-semibold text-white mb-3">{s.title}</h3>
                 <p className="font-body text-white/55 text-sm leading-relaxed">{s.desc}</p>
               </div>
             </div>

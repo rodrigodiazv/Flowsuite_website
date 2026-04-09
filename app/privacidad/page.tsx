@@ -25,7 +25,7 @@ export default function PrivacidadPage() {
       {/* Header */}
       <header className="max-w-3xl mx-auto px-6 pt-16 pb-12 border-b border-white/5">
         <span className="sector-tag mb-6 inline-block">Legal</span>
-        <h1 className="font-display text-4xl md:text-5xl font-800 text-white mb-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold text-white mb-4">
           Política de <span className="gradient-text">Privacidad</span>
         </h1>
         <p className="font-body text-white/50 text-base">
@@ -37,7 +37,7 @@ export default function PrivacidadPage() {
       <article className="max-w-3xl mx-auto px-6 py-12 space-y-10 font-body text-white/70 leading-relaxed">
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">1. Responsable del tratamiento</h2>
+          <h2 className="font-display text-xl font-bold text-white">1. Responsable del tratamiento</h2>
           <p>
             <strong className="text-white">FlowSuite</strong> — Rodrigo A. Díaz Videla<br />
             Ormont-Dessous, Vaud, Suiza<br />
@@ -49,7 +49,7 @@ export default function PrivacidadPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">2. Datos que recopilamos</h2>
+          <h2 className="font-display text-xl font-bold text-white">2. Datos que recopilamos</h2>
           <p>Recopilamos únicamente los datos necesarios para prestar el servicio:</p>
           <ul className="list-disc list-inside space-y-1 pl-2">
             <li>Nombre y datos de contacto (email, teléfono) facilitados voluntariamente.</li>
@@ -59,7 +59,7 @@ export default function PrivacidadPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">3. Finalidad y base legal</h2>
+          <h2 className="font-display text-xl font-bold text-white">3. Finalidad y base legal</h2>
           <p>Tratamos tus datos para:</p>
           <ul className="list-disc list-inside space-y-1 pl-2">
             <li>Prestar el servicio de agentes IA contratado <em>(ejecución de contrato, Art. 6.1.b RGPD)</em>.</li>
@@ -69,7 +69,7 @@ export default function PrivacidadPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">4. Conservación de datos</h2>
+          <h2 className="font-display text-xl font-bold text-white">4. Conservación de datos</h2>
           <p>
             Los datos se conservan durante la vigencia de la relación contractual y se eliminan en un plazo máximo
             de <strong className="text-white">90 días</strong> tras la cancelación del servicio, salvo obligación
@@ -78,7 +78,7 @@ export default function PrivacidadPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">5. Tus derechos</h2>
+          <h2 className="font-display text-xl font-bold text-white">5. Tus derechos</h2>
           <p>
             Puedes ejercer los siguientes derechos escribiendo a{' '}
             <a href="mailto:info@flowsuite.ch" className="text-neon hover:underline">info@flowsuite.ch</a>:
@@ -99,7 +99,7 @@ export default function PrivacidadPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">6. Transferencias internacionales</h2>
+          <h2 className="font-display text-xl font-bold text-white">6. Transferencias internacionales</h2>
           <p>
             Los datos se procesan en servidores ubicados en la Unión Europea y Suiza.
             No realizamos transferencias a terceros países sin las garantías adecuadas exigidas por el RGPD.
@@ -107,7 +107,7 @@ export default function PrivacidadPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">7. Modificaciones</h2>
+          <h2 className="font-display text-xl font-bold text-white">7. Modificaciones</h2>
           <p>
             FlowSuite se reserva el derecho a actualizar esta política. Cualquier cambio relevante será comunicado
             por email o publicado con la nueva fecha de actualización en esta página.

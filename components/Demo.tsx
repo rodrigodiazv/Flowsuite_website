@@ -1,5 +1,5 @@
 'use client'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Script from 'next/script'
 
 const DEMO_PHONES = [
@@ -21,7 +21,7 @@ export default function Demo() {
           {/* Left: Info */}
           <div>
             <span className="sector-tag mb-6 inline-block">Demo en vivo</span>
-            <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-6 leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
               Habla ahora con <br/>
               <span className="gradient-text">FLOWY</span>
             </h2>
@@ -83,7 +83,7 @@ export default function Demo() {
                   <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-neon rounded-full border-2 border-[#080C18]" />
                 </div>
                 <div>
-                  <div className="font-display font-600 text-white text-sm">FLOWY</div>
+                  <div className="font-display font-semibold text-white text-sm">FLOWY</div>
                   <div className="text-neon text-xs font-mono flex items-center gap-1">
                     <span className="w-1.5 h-1.5 bg-neon rounded-full animate-pulse" />
                     En línea ahora
