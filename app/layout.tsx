@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { Syne, Manrope, Space_Mono } from 'next/font/google'
-import './globals.css'
+import '@/app/globals.css'
 
 const syne = Syne({
   subsets: ['latin'],
