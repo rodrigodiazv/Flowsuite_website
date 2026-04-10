@@ -41,6 +41,9 @@ export const metadata: Metadata = {
     title: 'FlowSuite — Empleados Digitales con IA',
   },
   metadataBase: new URL('https://flowsuite.ch'),
+  icons: {
+    icon: '/favicon.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
