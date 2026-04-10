@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const footerLinks = {
   Producto: [
@@ -29,12 +30,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-neon/30 to-purple/30 border border-neon/30 flex items-center justify-center">
-                <svg viewBox="0 0 24 24" className="w-4 h-4" fill="none">
-                  <path d="M12 2L4 7v5c0 4.4 3.4 8.5 8 9.5 4.6-1 8-5.1 8-9.5V7l-8-5z" stroke="#00E5C8" strokeWidth="1.5" fill="rgba(0,229,200,0.1)"/>
-                  <circle cx="12" cy="12" r="2.5" fill="#00E5C8" opacity="0.8"/>
-                </svg>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="FlowSuite logo"
+                width={32}
+                height={32}
+                className="rounded-lg object-contain"
+              />
               <span className="font-display font-bold text-white">Flow<span className="text-neon">Suite</span></span>
             </div>
             <p className="text-white/40 text-sm font-body leading-relaxed mb-4">
