@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -24,13 +25,14 @@ export default function Nav() {
         {/* Logo */}
         <a href="#" className="flex items-center gap-3 group">
           <div className="relative w-9 h-9">
-            <div className="absolute inset-0 rounded-lg bg-gradient-to-br from-neon/30 to-purple/30 border border-neon/30" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-                <path d="M12 2L4 7v5c0 4.4 3.4 8.5 8 9.5 4.6-1 8-5.1 8-9.5V7l-8-5z" stroke="#00E5C8" strokeWidth="1.5" fill="rgba(0,229,200,0.1)"/>
-                <circle cx="12" cy="12" r="3" fill="#00E5C8" opacity="0.8"/>
-              </svg>
-            </div>
+            <Image
+              src="/logo.png"
+              alt="FlowSuite logo"
+              width={36}
+              height={36}
+              className="rounded-lg object-contain"
+              priority
+            />
           </div>
           <span className="font-display font-bold text-lg tracking-tight text-white group-hover:text-neon transition-colors">
             Flow<span className="text-neon">Suite</span>
