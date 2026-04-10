@@ -23,7 +23,7 @@ export default function ImpressumPage() {
 
       <header className="max-w-3xl mx-auto px-6 pt-16 pb-12 border-b border-white/5">
         <span className="sector-tag mb-6 inline-block">Legal</span>
-        <h1 className="font-display text-4xl md:text-5xl font-800 text-white mb-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold text-white mb-4">
           <span className="gradient-text">Impressum</span>
         </h1>
         <p className="font-body text-white/50 text-base">
@@ -34,7 +34,7 @@ export default function ImpressumPage() {
       <article className="max-w-3xl mx-auto px-6 py-12 space-y-10 font-body text-white/70 leading-relaxed">
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">Unternehmen / Empresa</h2>
+          <h2 className="font-display text-xl font-bold text-white">Unternehmen / Empresa</h2>
           <p>
             <strong className="text-white">FlowSuite</strong><br />
             Rodrigo A. Díaz Videla<br />
@@ -44,7 +44,7 @@ export default function ImpressumPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">Kontakt / Contacto</h2>
+          <h2 className="font-display text-xl font-bold text-white">Kontakt / Contacto</h2>
           <p>
             Email:{' '}
             <a href="mailto:info@flowsuite.ch" className="text-neon hover:underline">
@@ -62,7 +62,7 @@ export default function ImpressumPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">Mehrwertsteuer / IVA</h2>
+          <h2 className="font-display text-xl font-bold text-white">Mehrwertsteuer / IVA</h2>
           <p>
             FlowSuite ist von der Mehrwertsteuerpflicht befreit (Art. 10 MWSTG).<br />
             FlowSuite está exenta del IVA suizo (Art. 10 LTVA).
@@ -70,7 +70,7 @@ export default function ImpressumPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">Haftungsausschluss / Limitación de responsabilidad</h2>
+          <h2 className="font-display text-xl font-bold text-white">Haftungsausschluss / Limitación de responsabilidad</h2>
           <p>
             Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links.
             Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
@@ -82,7 +82,7 @@ export default function ImpressumPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">Urheberrecht / Derechos de autor</h2>
+          <h2 className="font-display text-xl font-bold text-white">Urheberrecht / Derechos de autor</h2>
           <p>
             Die durch den Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
             schweizerischen Urheberrecht.<br />
@@ -91,7 +91,7 @@ export default function ImpressumPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">Streitschlichtung / Resolución de conflictos</h2>
+          <h2 className="font-display text-xl font-bold text-white">Streitschlichtung / Resolución de conflictos</h2>
           <p>
             Für Verbraucher mit Wohnsitz in der EU steht die Online-Streitbeilegungsplattform der EU-Kommission
             zur Verfügung:{' '}

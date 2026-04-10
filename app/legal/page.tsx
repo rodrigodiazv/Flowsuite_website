@@ -23,7 +23,7 @@ export default function LegalPage() {
 
       <header className="max-w-3xl mx-auto px-6 pt-16 pb-12 border-b border-white/5">
         <span className="sector-tag mb-6 inline-block">Legal</span>
-        <h1 className="font-display text-4xl md:text-5xl font-800 text-white mb-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold text-white mb-4">
           Aviso <span className="gradient-text">Legal</span>
         </h1>
         <p className="font-body text-white/50 text-base">Última actualización: enero 2025</p>
@@ -32,7 +32,7 @@ export default function LegalPage() {
       <article className="max-w-3xl mx-auto px-6 py-12 space-y-10 font-body text-white/70 leading-relaxed">
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">1. Titular del sitio web</h2>
+          <h2 className="font-display text-xl font-bold text-white">1. Titular del sitio web</h2>
           <p>
             <strong className="text-white">FlowSuite</strong> — Rodrigo A. Díaz Videla<br />
             Ormont-Dessous, Vaud, Suiza<br />
@@ -47,7 +47,7 @@ export default function LegalPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">2. Objeto y ámbito de aplicación</h2>
+          <h2 className="font-display text-xl font-bold text-white">2. Objeto y ámbito de aplicación</h2>
           <p>
             El presente Aviso Legal regula el acceso y uso del sitio web{' '}
             <strong className="text-white">flowsuite.ch</strong> y sus subdominios (en adelante, «el Sitio»),
@@ -56,7 +56,7 @@ export default function LegalPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">3. Propiedad intelectual e industrial</h2>
+          <h2 className="font-display text-xl font-bold text-white">3. Propiedad intelectual e industrial</h2>
           <p>
             Todos los contenidos del Sitio (textos, imágenes, logotipos, código fuente, diseño, etc.) son propiedad
             de FlowSuite o de sus licenciantes y están protegidos por la legislación aplicable sobre propiedad
@@ -65,7 +65,7 @@ export default function LegalPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">4. Exclusión de garantías y responsabilidad</h2>
+          <h2 className="font-display text-xl font-bold text-white">4. Exclusión de garantías y responsabilidad</h2>
           <p>
             FlowSuite no garantiza la disponibilidad continua del Sitio ni la ausencia de errores en sus contenidos.
             No se asume responsabilidad por daños derivados del uso del Sitio o de la imposibilidad de acceso al mismo.
@@ -73,7 +73,7 @@ export default function LegalPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">5. Ley aplicable y jurisdicción</h2>
+          <h2 className="font-display text-xl font-bold text-white">5. Ley aplicable y jurisdicción</h2>
           <p>
             Las presentes condiciones se rigen por la legislación suiza. Para los usuarios residentes en España,
             serán de aplicación las disposiciones imperativas del ordenamiento jurídico español. Cualquier
@@ -83,7 +83,7 @@ export default function LegalPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">6. Modificaciones</h2>
+          <h2 className="font-display text-xl font-bold text-white">6. Modificaciones</h2>
           <p>
             FlowSuite se reserva el derecho a modificar el presente Aviso Legal en cualquier momento.
             Las modificaciones entrarán en vigor desde su publicación en el Sitio.

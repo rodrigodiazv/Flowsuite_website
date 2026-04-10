@@ -32,7 +32,7 @@ export default function Nav() {
               </svg>
             </div>
           </div>
-          <span className="font-display font-700 text-lg tracking-tight text-white group-hover:text-neon transition-colors">
+          <span className="font-display font-bold text-lg tracking-tight text-white group-hover:text-neon transition-colors">
             Flow<span className="text-neon">Suite</span>
           </span>
         </a>

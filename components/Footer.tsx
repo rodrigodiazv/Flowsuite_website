@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 const footerLinks = {
   Producto: [
     { label: 'Cómo funciona', href: '#como-funciona' },
@@ -33,7 +35,7 @@ export default function Footer() {
                   <circle cx="12" cy="12" r="2.5" fill="#00E5C8" opacity="0.8"/>
                 </svg>
               </div>
-              <span className="font-display font-700 text-white">Flow<span className="text-neon">Suite</span></span>
+              <span className="font-display font-bold text-white">Flow<span className="text-neon">Suite</span></span>
             </div>
             <p className="text-white/40 text-sm font-body leading-relaxed mb-4">
               Empleados digitales con IA para PYMEs en España y Suiza.
@@ -48,13 +50,19 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h4 className="font-display font-600 text-white text-sm mb-4 tracking-wide">{section}</h4>
+              <h4 className="font-display font-semibold text-white text-sm mb-4 tracking-wide">{section}</h4>
               <ul className="space-y-2.5">
                 {links.map((l) => (
                   <li key={l.href}>
-                    <a href={l.href} className="text-white/40 hover:text-neon text-sm font-body transition-colors">
-                      {l.label}
-                    </a>
+                    {l.href.startsWith('/') ? (
+                      <Link href={l.href} className="text-white/40 hover:text-neon text-sm font-body transition-colors">
+                        {l.label}
+                      </Link>
+                    ) : (
+                      <a href={l.href} className="text-white/40 hover:text-neon text-sm font-body transition-colors">
+                        {l.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

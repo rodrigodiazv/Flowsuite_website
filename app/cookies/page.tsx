@@ -23,7 +23,7 @@ export default function CookiesPage() {
 
       <header className="max-w-3xl mx-auto px-6 pt-16 pb-12 border-b border-white/5">
         <span className="sector-tag mb-6 inline-block">Legal</span>
-        <h1 className="font-display text-4xl md:text-5xl font-800 text-white mb-4">
+        <h1 className="font-display text-4xl md:text-5xl font-extrabold text-white mb-4">
           Política de <span className="gradient-text">Cookies</span>
         </h1>
         <p className="font-body text-white/50 text-base">Última actualización: enero 2025</p>
@@ -32,7 +32,7 @@ export default function CookiesPage() {
       <article className="max-w-3xl mx-auto px-6 py-12 space-y-10 font-body text-white/70 leading-relaxed">
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">1. ¿Qué son las cookies?</h2>
+          <h2 className="font-display text-xl font-bold text-white">1. ¿Qué son las cookies?</h2>
           <p>
             Las cookies son pequeños archivos de texto que un sitio web almacena en tu dispositivo cuando lo visitas.
             Permiten que el sitio recuerde tus preferencias o analice cómo lo utilizas.
@@ -40,15 +40,15 @@ export default function CookiesPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">2. Cookies que utilizamos</h2>
+          <h2 className="font-display text-xl font-bold text-white">2. Cookies que utilizamos</h2>
 
           <div className="card-glow rounded-2xl overflow-hidden neon-border">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b border-white/10 text-white/50">
-                  <th className="p-4 text-left font-600">Tipo</th>
-                  <th className="p-4 text-left font-600">Finalidad</th>
-                  <th className="p-4 text-left font-600">Duración</th>
+                  <th className="p-4 text-left font-semibold">Tipo</th>
+                  <th className="p-4 text-left font-semibold">Finalidad</th>
+                  <th className="p-4 text-left font-semibold">Duración</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -74,7 +74,7 @@ export default function CookiesPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">3. Gestión y desactivación</h2>
+          <h2 className="font-display text-xl font-bold text-white">3. Gestión y desactivación</h2>
           <p>
             Puedes configurar tu navegador para rechazar todas las cookies o para que te avise cuando se envíe una.
             Ten en cuenta que desactivar las cookies técnicas puede afectar al funcionamiento del sitio.
@@ -100,7 +100,7 @@ export default function CookiesPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">4. Actualizaciones</h2>
+          <h2 className="font-display text-xl font-bold text-white">4. Actualizaciones</h2>
           <p>
             FlowSuite puede actualizar esta política en cualquier momento. La fecha de la última revisión
             se indica al inicio de esta página.
@@ -108,7 +108,7 @@ export default function CookiesPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="font-display text-xl font-700 text-white">5. Contacto</h2>
+          <h2 className="font-display text-xl font-bold text-white">5. Contacto</h2>
           <p>
             Para cualquier consulta sobre el uso de cookies, escríbenos a{' '}
             <a href="mailto:info@flowsuite.ch" className="text-neon hover:underline">info@flowsuite.ch</a>.

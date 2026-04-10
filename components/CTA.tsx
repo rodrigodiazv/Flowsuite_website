@@ -12,7 +12,7 @@ export default function CTA() {
           Plazas limitadas este mes
         </div>
 
-        <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-800 text-white leading-[1.05] mb-6">
+        <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6">
           Tu competencia ya<br />
           <span className="gradient-text">está automatizando.</span>
         </h2>
@@ -23,13 +23,13 @@ export default function CTA() {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-          <a href="#demo" className="btn-neon btn-primary text-base px-10 py-4 rounded-xl font-display font-700 text-lg">
+          <a href="#demo" className="btn-neon btn-primary text-base px-10 py-4 rounded-xl font-display font-bold text-lg">
             Activar mi empleado digital
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </a>
-          <a href="mailto:info@flowsuite.ch" className="btn-neon text-base px-8 py-4 rounded-xl font-600">
+          <a href="mailto:info@flowsuite.ch" className="btn-neon text-base px-8 py-4 rounded-xl font-semibold">
             Hablar con Rodrigo
           </a>
         </div>

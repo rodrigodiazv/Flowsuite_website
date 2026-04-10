@@ -65,7 +65,7 @@ export default function Pricing() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="sector-tag mb-4 inline-block">Precios</span>
-          <h2 className="font-display text-4xl md:text-5xl font-700 text-white mb-4">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-4">
             Sin permanencia. <span className="gradient-text">Sin sorpresas.</span>
           </h2>
           <p className="text-white/50 font-body text-lg mb-8">
@@ -76,7 +76,7 @@ export default function Pricing() {
           <div className="inline-flex items-center gap-1 bg-white/5 border border-white/10 rounded-xl p-1">
             {(['es', 'ch'] as const).map(m => (
               <button key={m} onClick={() => setMarket(m)}
-                className={`px-5 py-2.5 rounded-lg text-sm font-display font-600 transition-all duration-300 ${
+                className={`px-5 py-2.5 rounded-lg text-sm font-display font-semibold transition-all duration-300 ${
                   market === m
                     ? 'bg-neon text-bg shadow-lg shadow-neon/30'
                     : 'text-white/50 hover:text-white'
@@ -91,16 +91,16 @@ export default function Pricing() {
           {plans.map((plan, i) => (
             <div key={i} className={`card-glow rounded-2xl p-8 flex flex-col relative overflow-hidden ${plan.featured ? 'pricing-featured' : 'neon-border'}`}>
               {plan.featured && plan.badge && (
-                <div className="absolute top-0 right-0 bg-gradient-to-r from-neon to-purple text-bg text-xs font-display font-700 px-4 py-1.5 rounded-bl-xl">
+                <div className="absolute top-0 right-0 bg-gradient-to-r from-neon to-purple text-bg text-xs font-display font-bold px-4 py-1.5 rounded-bl-xl">
                   {plan.badge}
                 </div>
               )}
 
               <div className="mb-6">
-                <h3 className="font-display text-xl font-700 text-white mb-1">{plan.name}</h3>
+                <h3 className="font-display text-xl font-bold text-white mb-1">{plan.name}</h3>
                 <p className="text-white/45 text-sm font-body mb-4">{plan.desc}</p>
                 <div className="flex items-end gap-1">
-                  <span className="font-display text-5xl font-800 text-white">
+                  <span className="font-display text-5xl font-extrabold text-white">
                     {plan.price[market]}
                   </span>
                   <span className="text-neon font-mono text-lg mb-2">{plan.currency[market]}</span>
@@ -120,7 +120,7 @@ export default function Pricing() {
               </ul>
 
               <a href="#demo"
-                className={`w-full text-center py-3.5 rounded-xl font-display font-600 text-sm transition-all duration-300 ${
+                className={`w-full text-center py-3.5 rounded-xl font-display font-semibold text-sm transition-all duration-300 ${
                   plan.featured
                     ? 'btn-primary btn-neon'
                     : 'btn-neon'
