@@ -24,21 +24,21 @@ const spaceMono = Space_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'FlowSuite — Empleados Digitales con IA para tu Negocio',
+  title: 'Flow. — Empleados Digitales con IA para tu Negocio',
   description: 'Agentes de IA que atienden, convierten y fidelizan clientes 24/7. Voz, texto y automatización para PYMEs en España y Suiza.',
   keywords: ['agente IA', 'empleado digital', 'automatización', 'chatbot', 'voz IA', 'PYME', 'Switzerland', 'España'],
-  authors: [{ name: 'FlowSuite', url: 'https://flowsuite.ch' }],
+  authors: [{ name: 'Flow.', url: 'https://flowsuite.ch' }],
   openGraph: {
-    title: 'FlowSuite — Empleados Digitales con IA',
+    title: 'Flow. — Empleados Digitales con IA',
     description: 'Tu negocio atendido por IA. 24/7, en todos los idiomas.',
     url: 'https://flowsuite.ch',
-    siteName: 'FlowSuite',
+    siteName: 'Flow.',
     locale: 'es_ES',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FlowSuite — Empleados Digitales con IA',
+    title: 'Flow. — Empleados Digitales con IA',
   },
   metadataBase: new URL('https://flowsuite.ch'),
   icons: {

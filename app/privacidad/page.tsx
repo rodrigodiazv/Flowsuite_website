@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad — FlowSuite',
-  description: 'Información sobre cómo FlowSuite recopila, usa y protege tus datos personales de acuerdo con el RGPD.',
+  title: 'Política de Privacidad — Flow.',
+  description: 'Información sobre cómo Flow. recopila, usa y protege tus datos personales de acuerdo con el RGPD.',
 }
 
 export default function PrivacidadPage() {
@@ -39,7 +39,7 @@ export default function PrivacidadPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">1. Responsable del tratamiento</h2>
           <p>
-            <strong className="text-white">FlowSuite</strong> — Rodrigo A. Díaz Videla<br />
+            <strong className="text-white">Flow.</strong> — Rodrigo A. Díaz Videla<br />
             Ormont-Dessous, Vaud, Suiza<br />
             Email:{' '}
             <a href="mailto:info@flowsuite.ch" className="text-neon hover:underline">
@@ -109,7 +109,7 @@ export default function PrivacidadPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">7. Modificaciones</h2>
           <p>
-            FlowSuite se reserva el derecho a actualizar esta política. Cualquier cambio relevante será comunicado
+            Flow. se reserva el derecho a actualizar esta política. Cualquier cambio relevante será comunicado
             por email o publicado con la nueva fecha de actualización en esta página.
           </p>
         </section>
@@ -118,7 +118,7 @@ export default function PrivacidadPage() {
       {/* Footer */}
       <div className="max-w-3xl mx-auto px-6 pb-16 border-t border-white/5 pt-8">
         <p className="text-white/25 text-sm font-body">
-          © 2025 FlowSuite · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
+          © 2025 Flow. · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
         </p>
       </div>
     </main>

@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Impressum — FlowSuite',
-  description: 'Angaben gemäß gesetzlicher Anforderungen für FlowSuite.',
+  title: 'Impressum — Flow.',
+  description: 'Angaben gemäß gesetzlicher Anforderungen für Flow.',
 }
 
 export default function ImpressumPage() {
@@ -36,7 +36,7 @@ export default function ImpressumPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">Unternehmen / Empresa</h2>
           <p>
-            <strong className="text-white">FlowSuite</strong><br />
+            <strong className="text-white">Flow.</strong><br />
             Rodrigo A. Díaz Videla<br />
             Ormont-Dessous<br />
             Vaud, Schweiz / Suiza
@@ -64,8 +64,8 @@ export default function ImpressumPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">Mehrwertsteuer / IVA</h2>
           <p>
-            FlowSuite ist von der Mehrwertsteuerpflicht befreit (Art. 10 MWSTG).<br />
-            FlowSuite está exenta del IVA suizo (Art. 10 LTVA).
+            Flow. ist von der Mehrwertsteuerpflicht befreit (Art. 10 MWSTG).<br />
+            Flow. está exenta del IVA suizo (Art. 10 LTVA).
           </p>
         </section>
 
@@ -109,7 +109,7 @@ export default function ImpressumPage() {
 
       <div className="max-w-3xl mx-auto px-6 pb-16 border-t border-white/5 pt-8">
         <p className="text-white/25 text-sm font-body">
-          © 2025 FlowSuite · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
+          © 2025 Flow. · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
         </p>
       </div>
     </main>

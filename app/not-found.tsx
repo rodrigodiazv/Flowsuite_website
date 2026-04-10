@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: '404 — Página no encontrada · FlowSuite',
+  title: '404 — Página no encontrada · Flow.',
 }
 
 export default function NotFound() {

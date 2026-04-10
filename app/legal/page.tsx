@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Aviso Legal — FlowSuite',
-  description: 'Información legal sobre FlowSuite, sus condiciones de uso y responsabilidades.',
+  title: 'Aviso Legal — Flow.',
+  description: 'Información legal sobre Flow., sus condiciones de uso y responsabilidades.',
 }
 
 export default function LegalPage() {
@@ -34,7 +34,7 @@ export default function LegalPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">1. Titular del sitio web</h2>
           <p>
-            <strong className="text-white">FlowSuite</strong> — Rodrigo A. Díaz Videla<br />
+            <strong className="text-white">Flow.</strong> — Rodrigo A. Díaz Videla<br />
             Ormont-Dessous, Vaud, Suiza<br />
             Email:{' '}
             <a href="mailto:info@flowsuite.ch" className="text-neon hover:underline">
@@ -51,7 +51,7 @@ export default function LegalPage() {
           <p>
             El presente Aviso Legal regula el acceso y uso del sitio web{' '}
             <strong className="text-white">flowsuite.ch</strong> y sus subdominios (en adelante, «el Sitio»),
-            titularidad de FlowSuite. El acceso al Sitio implica la aceptación plena de las presentes condiciones.
+            titularidad de Flow.. El acceso al Sitio implica la aceptación plena de las presentes condiciones.
           </p>
         </section>
 
@@ -59,7 +59,7 @@ export default function LegalPage() {
           <h2 className="font-display text-xl font-bold text-white">3. Propiedad intelectual e industrial</h2>
           <p>
             Todos los contenidos del Sitio (textos, imágenes, logotipos, código fuente, diseño, etc.) son propiedad
-            de FlowSuite o de sus licenciantes y están protegidos por la legislación aplicable sobre propiedad
+            de Flow. o de sus licenciantes y están protegidos por la legislación aplicable sobre propiedad
             intelectual. Queda prohibida su reproducción, distribución o comunicación pública sin autorización expresa.
           </p>
         </section>
@@ -67,7 +67,7 @@ export default function LegalPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">4. Exclusión de garantías y responsabilidad</h2>
           <p>
-            FlowSuite no garantiza la disponibilidad continua del Sitio ni la ausencia de errores en sus contenidos.
+            Flow. no garantiza la disponibilidad continua del Sitio ni la ausencia de errores en sus contenidos.
             No se asume responsabilidad por daños derivados del uso del Sitio o de la imposibilidad de acceso al mismo.
           </p>
         </section>
@@ -85,7 +85,7 @@ export default function LegalPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">6. Modificaciones</h2>
           <p>
-            FlowSuite se reserva el derecho a modificar el presente Aviso Legal en cualquier momento.
+            Flow. se reserva el derecho a modificar el presente Aviso Legal en cualquier momento.
             Las modificaciones entrarán en vigor desde su publicación en el Sitio.
           </p>
         </section>
@@ -93,7 +93,7 @@ export default function LegalPage() {
 
       <div className="max-w-3xl mx-auto px-6 pb-16 border-t border-white/5 pt-8">
         <p className="text-white/25 text-sm font-body">
-          © 2025 FlowSuite · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
+          © 2025 Flow. · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
         </p>
       </div>
     </main>

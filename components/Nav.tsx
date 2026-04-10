@@ -27,7 +27,7 @@ export default function Nav() {
           <div className="relative w-9 h-9">
             <Image
               src="/logo.png"
-              alt="FlowSuite logo"
+              alt="Flow. logo"
               width={36}
               height={36}
               className="rounded-lg object-contain"
@@ -35,7 +35,7 @@ export default function Nav() {
             />
           </div>
           <span className="font-display font-bold text-lg tracking-tight text-white group-hover:text-neon transition-colors">
-            Flow<span className="text-neon">Suite</span>
+            Flow<span className="text-neon">.</span>
           </span>
         </a>
 

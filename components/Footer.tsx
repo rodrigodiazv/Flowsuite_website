@@ -32,12 +32,12 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-4">
               <Image
                 src="/logo.png"
-                alt="FlowSuite logo"
+                alt="Flow. logo"
                 width={32}
                 height={32}
                 className="rounded-lg object-contain"
               />
-              <span className="font-display font-bold text-white">Flow<span className="text-neon">Suite</span></span>
+              <span className="font-display font-bold text-white">Flow<span className="text-neon">.</span></span>
             </div>
             <p className="text-white/40 text-sm font-body leading-relaxed mb-4">
               Empleados digitales con IA para PYMEs en España y Suiza.
@@ -77,7 +77,7 @@ export default function Footer() {
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/25 font-body">
-          <p>© 2025 FlowSuite · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza</p>
+          <p>© 2025 Flow. · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza</p>
           <p className="font-mono">flowsuite.ch · Empresa exenta de IVA (Art. 10 LTVA)</p>
         </div>
       </div>

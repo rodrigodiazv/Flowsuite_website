@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Política de Cookies — FlowSuite',
-  description: 'Información sobre el uso de cookies en el sitio web de FlowSuite.',
+  title: 'Política de Cookies — Flow.',
+  description: 'Información sobre el uso de cookies en el sitio web de Flow.',
 }
 
 export default function CookiesPage() {
@@ -102,7 +102,7 @@ export default function CookiesPage() {
         <section className="space-y-3">
           <h2 className="font-display text-xl font-bold text-white">4. Actualizaciones</h2>
           <p>
-            FlowSuite puede actualizar esta política en cualquier momento. La fecha de la última revisión
+            Flow. puede actualizar esta política en cualquier momento. La fecha de la última revisión
             se indica al inicio de esta página.
           </p>
         </section>
@@ -118,7 +118,7 @@ export default function CookiesPage() {
 
       <div className="max-w-3xl mx-auto px-6 pb-16 border-t border-white/5 pt-8">
         <p className="text-white/25 text-sm font-body">
-          © 2025 FlowSuite · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
+          © 2025 Flow. · Rodrigo A. Díaz Videla · Ormont-Dessous, Vaud, Suiza
         </p>
       </div>
     </main>
