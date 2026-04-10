@@ -28,6 +28,7 @@ export default function Demo() {
                   src="/flow-agent.png"
                   alt="FLOWY — agente IA de FlowSuite"
                   fill
+                  sizes="80px"
                   className="object-cover"
                 />
               </div>
@@ -88,7 +89,7 @@ export default function Demo() {
                   <div className="w-9 h-9 rounded-full border border-neon/30 overflow-hidden">
                     <Image
                       src="/flow-agent.png"
-                      alt="FLOWY agent"
+                      alt="FLOWY — agente IA de FlowSuite"
                       width={36}
                       height={36}
                       className="object-cover w-full h-full"
