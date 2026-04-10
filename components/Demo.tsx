@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from 'next/image'
 import Script from 'next/script'
 
 const DEMO_PHONES = [
@@ -21,10 +22,20 @@ export default function Demo() {
           {/* Left: Info */}
           <div>
             <span className="sector-tag mb-6 inline-block">Demo en vivo</span>
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Habla ahora con <br/>
-              <span className="gradient-text">FLOWY</span>
-            </h2>
+            <div className="flex items-center gap-5 mb-6">
+              <div className="relative w-20 h-20 rounded-2xl overflow-hidden border border-neon/30 flex-shrink-0 shadow-lg shadow-neon/10">
+                <Image
+                  src="/flow-agent.png"
+                  alt="FLOWY — agente IA de FlowSuite"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight">
+                Habla ahora con <br/>
+                <span className="gradient-text">FLOWY</span>
+              </h2>
+            </div>
             <p className="font-body text-white/55 text-lg leading-relaxed mb-8">
               FLOWY es nuestro agente IA estrella. Prueba en este chat lo que vivirán tus clientes: 
               respuestas inmediatas, personalizadas y en tu idioma.
@@ -74,10 +85,14 @@ export default function Demo() {
               {/* Widget header */}
               <div className="flex items-center gap-3 px-5 py-4 border-b border-white/5">
                 <div className="relative">
-                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-neon/40 to-purple/40 border border-neon/30 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-                      <path d="M12 2L4 7v5c0 4.4 3.4 8.5 8 9.5 4.6-1 8-5.1 8-9.5V7l-8-5z" stroke="#00E5C8" strokeWidth="1.5" fill="rgba(0,229,200,0.15)"/>
-                    </svg>
+                  <div className="w-9 h-9 rounded-full border border-neon/30 overflow-hidden">
+                    <Image
+                      src="/flow-agent.png"
+                      alt="FLOWY agent"
+                      width={36}
+                      height={36}
+                      className="object-cover w-full h-full"
+                    />
                   </div>
                   <div className="pulse-ring" />
                   <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-neon rounded-full border-2 border-[#080C18]" />
