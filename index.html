@@ -9,17 +9,14 @@
 <!-- Favicon real del repo -->
 <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/favicon.png">
 
-<!-- Fonts: Plus Jakarta Sans (proven from previous premium build) + Syne for display -->
+<!-- Fonts: Plus Jakarta Sans + Syne -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
 <style>
 /* ============================================================
-   RESET + VARIABLES
-   Design direction: Dark premium SaaS — ElevenLabs × Linear × Superhuman
-   Background: ultra-dark navy, teal accent, purple secondary
-   Differentiation: Flow avatar as the hero — she IS the product
+   RESET + VARIABLES (Mantenemos tu estilo Premium)
 ============================================================ */
 :root {
   --ink:    #02060F;
@@ -29,15 +26,12 @@
   --teal2:  #00BFA8;
   --purple: #7B5CF6;
   --purp2:  #9B7FF8;
-  --red:    #FF4D6D;
   --white:  #FFFFFF;
   --g1:     #E8EDF5;
   --g2:     #9BA8BE;
   --g3:     #5C6B85;
   --border: rgba(255,255,255,0.07);
   --card:   rgba(255,255,255,0.035);
-  --glow-t: 0 0 60px rgba(0,229,200,0.12);
-  --glow-p: 0 0 60px rgba(123,92,246,0.15);
   --ff-d:   'Syne', sans-serif;
   --ff-b:   'Plus Jakarta Sans', sans-serif;
 }
@@ -50,37 +44,11 @@ button { cursor: pointer; font-family: var(--ff-b); border: none; background: no
 ul     { list-style: none; }
 img    { display: block; max-width: 100%; }
 
-/* GRAIN OVERLAY */
-body::after {
-  content: '';
-  position: fixed; inset: 0; z-index: 9999;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)'/%3E%3C/svg%3E");
-  opacity: 0.032;
-}
-
-/* GRID TEXTURE */
-.has-grid {
-  background-image:
-    linear-gradient(rgba(255,255,255,0.028) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.028) 1px, transparent 1px);
-  background-size: 72px 72px;
-}
+/* ELIMINADO: Grain overlay (para limpiar la vista) */
 
 .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
 
-/* ============================================================
-   TYPOGRAPHY HELPERS
-============================================================ */
-.tag {
-  display: inline-flex; align-items: center; gap: 7px;
-  font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--teal);
-  background: rgba(0,229,200,.07); border: 1px solid rgba(0,229,200,.2);
-  border-radius: 100px; padding: 6px 14px; margin-bottom: 22px;
-}
-.tag-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse-dot 2s ease infinite; }
-
+/* TYPOGRAPHY */
 .h2 {
   font-family: var(--ff-d);
   font-size: clamp(2rem, 4.5vw, 3.2rem);
@@ -88,1331 +56,380 @@ body::after {
   margin-bottom: 18px;
 }
 .h2 em { font-style: normal; color: var(--teal); }
-.h2 strong { font-style: normal; color: var(--purp2); font-weight: 800; }
-
 .lead { font-size: 1.08rem; color: var(--g2); line-height: 1.72; max-width: 560px; }
 
-/* ============================================================
-   BUTTONS
-============================================================ */
+/* BUTTONS */
 .btn {
   display: inline-flex; align-items: center; gap: 9px;
   font-family: var(--ff-b); font-weight: 700; font-size: .94rem;
   padding: 14px 28px; border-radius: 12px;
-  transition: all .22s ease; white-space: nowrap;
-  cursor: pointer;
+  transition: all .22s ease; white-space: nowrap; cursor: pointer;
 }
 .btn-teal {
   background: var(--teal); color: var(--ink);
   box-shadow: 0 0 28px rgba(0,229,200,.28);
 }
 .btn-teal:hover { background: #1FFCD6; box-shadow: 0 0 48px rgba(0,229,200,.5); transform: translateY(-2px); }
-
 .btn-outline {
   background: transparent; color: var(--g1);
   border: 1px solid var(--border);
 }
 .btn-outline:hover { border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.04); transform: translateY(-2px); }
 
-.btn-purple {
-  background: var(--purple); color: var(--white);
-  box-shadow: 0 0 28px rgba(123,92,246,.28);
-}
-.btn-purple:hover { background: var(--purp2); box-shadow: 0 0 48px rgba(123,92,246,.5); transform: translateY(-2px); }
-
-/* ============================================================
-   HEADER
-============================================================ */
+/* HEADER */
 #header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
   padding: 16px 0;
-  transition: background .35s ease, border-color .35s ease, backdrop-filter .35s ease;
+  transition: background .35s ease, border-color .35s ease;
 }
 #header.scrolled {
-  background: rgba(2,6,15,.9);
-  backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+  background: rgba(2,6,15,.95);
+  backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border);
 }
-
 .nav { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
-
-/* Logo */
-.nav-logo { display: flex; align-items: center; gap: 0; flex-shrink: 0; }
 .nav-logo-img { height: 40px; width: auto; object-fit: contain; }
-.nav-logo-text {
-  font-family: var(--ff-d); font-weight: 800; font-size: 1.2rem;
-  letter-spacing: -.02em; display: none;
-  background: linear-gradient(135deg, var(--white) 30%, var(--teal));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
 
-/* Nav links */
-.nav-links { display: flex; align-items: center; gap: 30px; }
-.nav-links a { font-size: .88rem; font-weight: 500; color: var(--g3); transition: color .2s; }
-.nav-links a:hover { color: var(--white); }
-
-/* Language switcher — bulletproof implementation */
+/* LANGUAGE SWITCHER */
 .lang-sw {
   display: flex; align-items: center; gap: 1px;
   background: rgba(255,255,255,.04); border: 1px solid var(--border);
-  border-radius: 10px; padding: 3px; flex-shrink: 0;
+  border-radius: 10px; padding: 3px;
 }
 .lbtn {
   font-family: var(--ff-b); font-size: .7rem; font-weight: 700;
   color: var(--g3); padding: 5px 10px; border-radius: 8px;
-  transition: all .18s ease; cursor: pointer; letter-spacing: .04em;
-  border: none; background: transparent;
+  transition: all .18s ease; cursor: pointer;
 }
 .lbtn:hover { color: var(--white); }
 .lbtn.on { background: var(--teal); color: var(--ink) !important; }
 
-.nav-right { display: flex; align-items: center; gap: 12px; }
-
-/* Hamburger */
-.hbg { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 3px; }
-.hbg span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all .28s; }
-.hbg.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.hbg.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.hbg.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-/* Mobile menu */
-.mob-menu {
-  display: none; position: fixed; top: 73px; left: 0; right: 0; z-index: 997;
-  background: rgba(7,13,26,.98); backdrop-filter: blur(24px);
-  border-bottom: 1px solid var(--border); padding: 20px 28px;
-  flex-direction: column; gap: 2px;
-}
-.mob-menu.open { display: flex; }
-.mob-menu a { font-size: 1rem; font-weight: 600; padding: 13px 0; border-bottom: 1px solid var(--border); color: var(--g1); }
-.mob-lang { display: flex; gap: 6px; margin: 14px 0 6px; flex-wrap: wrap; }
-
-/* ============================================================
-   HERO — Split layout: copy left + Flow avatar right
-============================================================ */
+/* HERO SECTION (MODIFICADA PARA ESTABILIDAD) */
 .hero {
   min-height: 100vh; display: flex; align-items: center;
-  padding: 128px 0 80px; position: relative; overflow: hidden;
+  padding: 140px 0 80px; position: relative; overflow: hidden;
+  background: radial-gradient(circle at 70% 20%, #1e1b4b 0%, #02060f 50%);
 }
-
-/* Ambient orbs */
-.orb {
-  position: absolute; border-radius: 50%; pointer-events: none; z-index: 0;
-  filter: blur(80px);
-}
-.orb-1 { width: 700px; height: 700px; top: -20%; right: -15%; background: radial-gradient(circle, rgba(123,92,246,.16) 0%, transparent 70%); }
-.orb-2 { width: 500px; height: 500px; bottom: -10%; left: -10%; background: radial-gradient(circle, rgba(0,229,200,.1) 0%, transparent 70%); }
-.orb-3 { width: 300px; height: 300px; top: 30%; left: 30%; background: radial-gradient(circle, rgba(123,92,246,.06) 0%, transparent 70%); }
 
 .hero-inner {
   position: relative; z-index: 2;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
 }
 
-/* Hero left */
+/* Hero Left */
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
   background: rgba(0,229,200,.07); border: 1px solid rgba(0,229,200,.22);
   border-radius: 100px; padding: 8px 16px;
   font-size: .8rem; font-weight: 700; color: var(--teal);
   margin-bottom: 30px;
-  animation: fadeUp .6s ease both;
 }
-.hero-badge-dot { width: 7px; height: 7px; background: var(--teal); border-radius: 50%; animation: pulse-dot 1.8s ease infinite; flex-shrink: 0; }
-
 .hero-h1 {
   font-family: var(--ff-d);
   font-size: clamp(3rem, 5.5vw, 5rem);
   font-weight: 800; line-height: .98; letter-spacing: -.04em;
   margin-bottom: 26px;
-  animation: fadeUp .6s .08s ease both;
 }
-.hero-h1 .line1 { display: block; color: var(--white); }
 .hero-h1 .line2 {
   display: block;
   background: linear-gradient(120deg, var(--teal) 0%, var(--purp2) 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
-
 .hero-sub {
-  font-size: 1.08rem; color: var(--g2); max-width: 480px;
+  font-size: 1.15rem; color: var(--g2); max-width: 520px;
   line-height: 1.72; margin-bottom: 38px;
-  animation: fadeUp .6s .16s ease both;
 }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
 
-.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 52px; animation: fadeUp .6s .24s ease both; }
-
-.hero-stats {
-  display: flex; flex-wrap: wrap; gap: 36px;
-  padding-top: 36px; border-top: 1px solid var(--border);
-  animation: fadeUp .6s .32s ease both;
-}
-.stat .n { font-family: var(--ff-d); font-size: 1.9rem; font-weight: 800; color: var(--teal); letter-spacing: -.03em; }
-.stat .l { font-size: .78rem; color: var(--g3); margin-top: 1px; }
-
-/* Hero right — Flow avatar */
+/* Hero Right - FLOW IMAGE (ESTÁTICA Y GRANDE) */
 .hero-right {
   position: relative; display: flex; justify-content: center;
-  animation: fadeUp .7s .14s ease both;
 }
-.hero-right::before {
-  content: '';
-  position: absolute; inset: -20px;
-  background: radial-gradient(ellipse at center, rgba(123,92,246,.14) 0%, transparent 65%);
-  border-radius: 50%; pointer-events: none;
-}
-
-.flow-card {
-  position: relative; z-index: 1;
-  border-radius: 28px; overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,.7), 0 0 0 1px rgba(0,229,200,.1), var(--glow-p);
-  max-width: 420px; width: 100%;
-}
+/* ELIMINADO: Animación float-y para evitar mareos */
 .flow-img {
-  width: 100%; display: block;
-  animation: float-y 6s ease-in-out infinite;
-  object-fit: cover;
+  width: 100%; max-width: 500px; 
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+  transition: transform 0.3s ease;
 }
+/* Pequeño zoom al pasar el mouse, sutil */
+.hero-right:hover .flow-img { transform: scale(1.02); }
 
-/* Floating badge: Flow is online */
-.flow-live {
-  position: absolute; bottom: 22px; left: -12px;
-  background: rgba(7,13,26,.92); border: 1px solid rgba(0,229,200,.3);
-  backdrop-filter: blur(16px); border-radius: 14px;
-  padding: 12px 18px; display: flex; align-items: center; gap: 10px;
-  z-index: 2; box-shadow: 0 12px 40px rgba(0,0,0,.5);
-  animation: float-y 6s ease-in-out infinite reverse;
-}
-.flow-live-dot { width: 10px; height: 10px; background: var(--teal); border-radius: 50%; flex-shrink: 0; animation: pulse-dot 1.8s ease infinite; }
-.flow-live-name { font-family: var(--ff-d); font-size: .88rem; font-weight: 700; color: var(--white); }
-.flow-live-sub { font-size: .7rem; color: var(--g3); margin-top: 1px; }
-
-/* Floating stat badges */
-.fb {
-  position: absolute; z-index: 2;
-  background: rgba(7,13,26,.9); border: 1px solid var(--border);
-  backdrop-filter: blur(12px); border-radius: 12px;
-  padding: 10px 14px; font-size: .76rem; font-weight: 600; color: var(--g1);
-  display: flex; align-items: center; gap: 8px;
-  box-shadow: 0 8px 32px rgba(0,0,0,.4);
-  white-space: nowrap;
-}
-.fb-1 { top: 12%; right: -18px; animation: float-y 5s ease-in-out infinite .5s; }
-.fb-2 { top: 42%; right: -22px; animation: float-y 5.5s ease-in-out infinite 1s; }
-
-/* ============================================================
-   LOGOS MARQUEE
-============================================================ */
-.marquee-wrap { padding: 32px 0; overflow: hidden; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--ink2); }
-.marquee-label { text-align: center; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--g3); margin-bottom: 22px; }
-.marquee-track { display: flex; gap: 36px; align-items: center; animation: marquee 24s linear infinite; white-space: nowrap; }
-.mpill { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,.035); border: 1px solid var(--border); border-radius: 100px; padding: 8px 18px; font-size: .82rem; font-weight: 600; color: var(--g3); flex-shrink: 0; }
-
-/* ============================================================
-   VILLAIN — El problema (StoryBrand)
-============================================================ */
-.villain { padding: 96px 0; background: var(--ink2); }
-.villain-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; margin-top: 52px; }
-.villain-card {
-  background: rgba(255,77,109,.04); border: 1px solid rgba(255,77,109,.12);
-  border-radius: 18px; padding: 32px 28px;
-  transition: border-color .28s;
-}
-.villain-card:hover { border-color: rgba(255,77,109,.3); }
-.vc-icon { font-size: 2rem; margin-bottom: 16px; }
-.vc-title { font-family: var(--ff-d); font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
-.vc-desc { font-size: .88rem; color: var(--g2); line-height: 1.65; }
-
-/* ============================================================
-   BENEFITS
-============================================================ */
-.benefits { padding: 96px 0; }
-.benefits-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; margin-top: 56px; }
+/* SECCIÓN BENEFICIOS (COPY DE LA IMAGEN) */
+.benefits { padding: 100px 0; background: var(--ink2); }
+.benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px; }
 .bcard {
   background: var(--card); border: 1px solid var(--border);
-  border-radius: 20px; padding: 36px 28px;
-  transition: border-color .28s, box-shadow .28s, transform .28s;
-  position: relative; overflow: hidden;
+  border-radius: 20px; padding: 40px 30px;
+  transition: border-color .28s, transform .28s;
 }
-.bcard::before {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(0,229,200,.03) 0%, transparent 60%);
-  opacity: 0; transition: opacity .28s; pointer-events: none;
-}
-.bcard:hover { border-color: rgba(0,229,200,.22); box-shadow: 0 0 48px rgba(0,229,200,.08); transform: translateY(-4px); }
-.bcard:hover::before { opacity: 1; }
-.bicon { width: 48px; height: 48px; background: rgba(0,229,200,.08); border: 1px solid rgba(0,229,200,.18); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.35rem; margin-bottom: 20px; }
-.btitle { font-family: var(--ff-d); font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
-.bdesc { font-size: .88rem; color: var(--g2); line-height: 1.65; }
+.bcard:hover { border-color: var(--teal); transform: translateY(-5px); }
+.bicon { font-size: 2.5rem; margin-bottom: 20px; display: block; }
+.btitle { font-family: var(--ff-d); font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; color: var(--white); }
+.bdesc { font-size: .95rem; color: var(--g2); line-height: 1.65; }
 
-/* ============================================================
-   HOW IT WORKS
-============================================================ */
-.how { padding: 96px 0; background: var(--ink2); position: relative; overflow: hidden; }
-.how::before { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 800px; height: 500px; background: radial-gradient(ellipse, rgba(123,92,246,.06) 0%, transparent 70%); pointer-events: none; }
-.how-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 28px; margin-top: 56px; position: relative; z-index: 1; }
-.how-steps::before { content: ''; position: absolute; top: 26px; left: 12%; right: 12%; height: 1px; background: linear-gradient(90deg,transparent, var(--purple), var(--teal), transparent); }
-.step { text-align: center; padding: 0 8px; }
-.step-n {
-  width: 54px; height: 54px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--ff-d); font-weight: 800; font-size: .95rem;
-  margin: 0 auto 22px; position: relative;
-  transition: transform .28s;
-}
-.step:hover .step-n { transform: scale(1.1); }
-.step-n.t { background: rgba(0,229,200,.1); border: 2px solid var(--teal); color: var(--teal); }
-.step-n.p { background: rgba(123,92,246,.1); border: 2px solid var(--purp2); color: var(--purp2); }
-.step-title { font-family: var(--ff-d); font-size: 1rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
-.step-desc { font-size: .85rem; color: var(--g2); line-height: 1.65; }
+/* FOOTER */
+footer { padding: 60px 0; border-top: 1px solid var(--border); text-align: center; color: var(--g3); font-size: 0.9rem; }
 
-/* ============================================================
-   DEMO — Flow en acción
-============================================================ */
-.demo { padding: 96px 0; }
-.demo-inner {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center;
-}
-.demo-text .h2 { margin-bottom: 20px; }
-.demo-text .lead { margin-bottom: 32px; }
-
-/* Mockup phone */
-.phone-wrap { position: relative; max-width: 340px; margin: 0 auto; }
-.phone {
-  background: var(--ink3); border: 1px solid rgba(0,229,200,.15);
-  border-radius: 28px; overflow: hidden;
-  box-shadow: 0 32px 80px rgba(0,0,0,.6), var(--glow-t);
-}
-.phone-header {
-  background: rgba(0,229,200,.06); border-bottom: 1px solid rgba(0,229,200,.1);
-  padding: 14px 18px; display: flex; align-items: center; gap: 12px;
-}
-.ph-avatar { width: 38px; height: 38px; border-radius: 50%; overflow: hidden; flex-shrink: 0; border: 2px solid var(--teal); }
-.ph-avatar img { width: 100%; height: 100%; object-fit: cover; }
-.ph-name { font-family: var(--ff-d); font-size: .88rem; font-weight: 700; color: var(--white); }
-.ph-status { font-size: .68rem; color: var(--teal); display: flex; align-items: center; gap: 5px; }
-.ph-dot { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; animation: pulse-dot 1.8s ease infinite; }
-
-/* Wave bars */
-.voice-bar { padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
-.vb-label { font-size: .65rem; font-weight: 700; letter-spacing: .1em; color: var(--teal); }
-.waves { display: flex; align-items: center; gap: 3px; height: 24px; }
-.wave { width: 3px; background: var(--teal); border-radius: 3px; animation: wave-anim var(--d,0.8s) ease-in-out infinite alternate; }
-.wave:nth-child(1)  { height: 6px;  --d: 0.7s; }
-.wave:nth-child(2)  { height: 14px; --d: 0.5s; }
-.wave:nth-child(3)  { height: 20px; --d: 0.9s; }
-.wave:nth-child(4)  { height: 10px; --d: 0.6s; }
-.wave:nth-child(5)  { height: 22px; --d: 0.4s; }
-.wave:nth-child(6)  { height: 8px;  --d: 0.8s; }
-.wave:nth-child(7)  { height: 18px; --d: 0.55s; }
-.wave:nth-child(8)  { height: 12px; --d: 0.75s; }
-.wave:nth-child(9)  { height: 20px; --d: 0.45s; }
-.wave:nth-child(10) { height: 6px;  --d: 0.65s; }
-
-/* Chat messages */
-.chat { padding: 16px 14px; display: flex; flex-direction: column; gap: 10px; min-height: 200px; }
-.msg { max-width: 82%; font-size: .8rem; line-height: 1.45; padding: 9px 13px; border-radius: 14px; }
-.msg-flow { background: rgba(0,229,200,.1); border: 1px solid rgba(0,229,200,.15); color: var(--g1); border-radius: 4px 14px 14px 14px; align-self: flex-start; }
-.msg-user { background: rgba(123,92,246,.15); border: 1px solid rgba(123,92,246,.2); color: var(--g1); border-radius: 14px 4px 14px 14px; align-self: flex-end; }
-.typing { display: flex; gap: 4px; align-items: center; padding: 10px 14px; align-self: flex-start; }
-.typing span { width: 6px; height: 6px; background: var(--teal); border-radius: 50%; opacity: .4; animation: typing-dot .9s ease-in-out infinite; }
-.typing span:nth-child(2) { animation-delay: .2s; }
-.typing span:nth-child(3) { animation-delay: .4s; }
-
-/* Floating demo badges */
-.db { position: absolute; z-index: 2; background: rgba(7,13,26,.92); border: 1px solid var(--border); backdrop-filter: blur(12px); border-radius: 12px; padding: 9px 13px; font-size: .73rem; font-weight: 600; color: var(--g1); display: flex; align-items: center; gap: 7px; box-shadow: 0 8px 28px rgba(0,0,0,.4); white-space: nowrap; }
-.db-1 { top: 8%; right: -18px; animation: float-y 5s ease-in-out infinite; }
-.db-2 { bottom: 18%; left: -20px; animation: float-y 5.5s ease-in-out infinite .8s; }
-
-/* ============================================================
-   PRICING
-============================================================ */
-.pricing { padding: 96px 0; background: var(--ink2); }
-.price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; align-items: start; margin-top: 56px; }
-.pcard {
-  background: rgba(255,255,255,.03); border: 1px solid var(--border);
-  border-radius: 22px; padding: 38px 28px;
-  position: relative; transition: transform .28s ease, box-shadow .28s ease;
-}
-.pcard:hover { transform: translateY(-6px); box-shadow: 0 28px 72px rgba(0,0,0,.4); }
-.pcard.best {
-  border-color: rgba(123,92,246,.5);
-  background: linear-gradient(148deg, rgba(12,20,36,1) 0%, rgba(16,8,38,1) 100%);
-  box-shadow: var(--glow-p);
-}
-.pbadge {
-  position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-  background: linear-gradient(90deg, var(--purple), var(--purp2));
-  color: white; font-size: .68rem; font-weight: 800; letter-spacing: .1em;
-  text-transform: uppercase; padding: 5px 16px; border-radius: 100px; white-space: nowrap;
-}
-.p-tier { font-family: var(--ff-d); font-weight: 800; font-size: 1rem; color: var(--teal); margin-bottom: 8px; }
-.p-desc { font-size: .85rem; color: var(--g3); margin-bottom: 22px; min-height: 38px; line-height: 1.5; }
-.p-price { display: flex; align-items: baseline; gap: 2px; margin-bottom: 5px; }
-.p-curr { font-family: var(--ff-d); font-size: 1.1rem; font-weight: 700; }
-.p-num { font-family: var(--ff-d); font-size: 2.8rem; font-weight: 800; line-height: 1; letter-spacing: -.04em; }
-.p-mo { font-size: .82rem; color: var(--g3); }
-.p-alt { font-size: .75rem; color: var(--g3); margin-bottom: 24px; }
-.p-div { height: 1px; background: var(--border); margin: 22px 0; }
-.p-feats { display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px; }
-.pf { display: flex; align-items: flex-start; gap: 9px; font-size: .85rem; }
-.pf-ok { color: var(--teal); font-size: .85rem; flex-shrink: 0; margin-top: 2px; }
-.risk-row { display: flex; align-items: center; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 32px; }
-.risk-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; font-weight: 600; color: var(--g3); }
-.ri-icon { color: var(--teal); }
-
-/* ============================================================
-   FAQ
-============================================================ */
-.faq { padding: 96px 0; }
-.faq-wrap { max-width: 720px; margin: 52px auto 0; display: flex; flex-direction: column; gap: 1px; }
-.faq-item { border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color .2s; }
-.faq-item:hover { border-color: rgba(0,229,200,.2); }
-.faq-q {
-  width: 100%; display: flex; justify-content: space-between; align-items: center;
-  padding: 18px 22px; background: none; color: var(--g1);
-  font-size: .94rem; font-weight: 600; cursor: pointer; text-align: left;
-  gap: 12px;
-}
-.faq-icon { font-size: 1.1rem; color: var(--teal); flex-shrink: 0; transition: transform .25s; }
-.faq-a { max-height: 0; overflow: hidden; transition: max-height .35s ease; }
-.faq-a-inner { padding: 0 22px 18px; font-size: .88rem; color: var(--g2); line-height: 1.7; }
-.faq-item.open .faq-icon { transform: rotate(45deg); }
-.faq-item.open .faq-a { max-height: 200px; }
-
-/* ============================================================
-   FINAL CTA
-============================================================ */
-.final-cta { padding: 96px 0; }
-.cta-box {
-  background: linear-gradient(135deg, rgba(0,229,200,.06) 0%, rgba(123,92,246,.1) 100%);
-  border: 1px solid rgba(0,229,200,.15); border-radius: 32px;
-  padding: 80px 64px; text-align: center; position: relative; overflow: hidden;
-}
-.cta-box::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 50% 50%, rgba(0,229,200,.04) 0%, transparent 55%); pointer-events: none; }
-.cta-box .h2 { margin-bottom: 18px; }
-.cta-box .lead { margin: 0 auto 40px; text-align: center; }
-.cta-btns { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
-
-/* ============================================================
-   FOOTER
-============================================================ */
-footer { background: var(--ink); border-top: 1px solid var(--border); padding: 56px 0 28px; }
-.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 44px; }
-.f-logo { margin-bottom: 14px; }
-.f-logo img { height: 34px; object-fit: contain; }
-.f-desc { font-size: .85rem; color: var(--g3); line-height: 1.65; max-width: 260px; margin-bottom: 16px; }
-.f-contact { font-size: .78rem; color: var(--g3); line-height: 1.9; }
-.f-contact a { color: var(--teal); }
-.f-contact a:hover { text-decoration: underline; }
-.f-title { font-family: var(--ff-d); font-weight: 700; font-size: .85rem; margin-bottom: 16px; color: var(--white); }
-.f-links { display: flex; flex-direction: column; gap: 9px; }
-.f-links a { font-size: .85rem; color: var(--g3); transition: color .18s; }
-.f-links a:hover { color: var(--teal); }
-.f-bottom { border-top: 1px solid var(--border); padding-top: 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
-.f-legal { font-size: .72rem; color: var(--g3); line-height: 1.7; }
-.f-legal a { color: var(--g3); text-decoration: underline; text-underline-offset: 3px; }
-.f-legal a:hover { color: var(--teal); }
-.f-copy { font-size: .72rem; color: var(--g3); }
-
-/* ============================================================
-   KEYFRAMES
-============================================================ */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes pulse-dot {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50%      { opacity: .4; transform: scale(.75); }
-}
-@keyframes float-y {
-  0%,100% { transform: translateY(0); }
-  50%      { transform: translateY(-16px); }
-}
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes wave-anim {
-  from { transform: scaleY(.4); }
-  to   { transform: scaleY(1); }
-}
-@keyframes typing-dot {
-  0%,80%,100% { opacity: .4; transform: scale(.8); }
-  40%          { opacity: 1; transform: scale(1); }
-}
-
-/* REVEAL */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.in { opacity: 1; transform: none; }
-
-/* ============================================================
-   RESPONSIVE
-============================================================ */
-@media (max-width: 1024px) {
-  .hero-inner  { grid-template-columns: 1fr; }
-  .hero-right  { display: none; }
-  .benefits-grid, .villain-grid { grid-template-columns: repeat(2,1fr); }
-  .how-steps   { grid-template-columns: repeat(2,1fr); }
-  .how-steps::before { display: none; }
-  .price-grid  { grid-template-columns: 1fr; max-width: 420px; margin-left: auto; margin-right: auto; }
-  .demo-inner  { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
-  .footer-grid > div:first-child { grid-column: 1/-1; }
-}
-@media (max-width: 768px) {
-  .nav-links     { display: none; }
-  .nav-right .btn, .nav-right .lang-sw { display: none; }
-  .hbg           { display: flex; }
-  .benefits-grid, .villain-grid { grid-template-columns: 1fr; }
-  .how-steps     { grid-template-columns: 1fr; }
-  .cta-box       { padding: 48px 24px; }
-  .footer-grid   { grid-template-columns: 1fr; gap: 28px; }
-  .f-bottom      { flex-direction: column; text-align: center; }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 40px; }
+  .hero-sub { margin: 0 auto 30px; }
+  .hero-cta { justify-content: center; }
+  .hero-right { order: -1; } /* Imagen arriba en móvil */
+  .nav-links { display: none; } /* Simplificado para este ejemplo */
 }
 </style>
 </head>
 <body>
 
-<!-- ═══════════════════════════════════
-     HEADER
-═══════════════════════════════════ -->
+<!-- HEADER -->
 <header id="header">
-  <div class="container">
-    <nav class="nav">
-
-      <!-- Logo real -->
-      <a href="#" class="nav-logo" aria-label="FlowSuite">
-        <img class="nav-logo-img"
-          src="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/logo.png"
-          alt="FlowSuite"
-          onerror="this.style.display='none'; document.getElementById('nl-fb').style.display='block'">
-        <span class="nav-logo-text" id="nl-fb">FlowSuite</span>
-      </a>
-
-      <!-- Desktop nav links -->
-      <ul class="nav-links">
-        <li><a href="#beneficios" data-i18n="nav_benefits">Beneficios</a></li>
-        <li><a href="#como-funciona" data-i18n="nav_how">Cómo funciona</a></li>
-        <li><a href="#precios" data-i18n="nav_pricing">Precios</a></li>
-        <li><a href="#demo" data-i18n="nav_demo">Demo</a></li>
-      </ul>
-
-      <div class="nav-right">
-        <!-- Language switcher -->
-        <div class="lang-sw" id="lang-sw" role="group" aria-label="Seleccionar idioma">
-          <button class="lbtn" data-lang="es">ES</button>
-          <button class="lbtn" data-lang="en">EN</button>
-          <button class="lbtn" data-lang="fr">FR</button>
-          <button class="lbtn" data-lang="de">DE</button>
-        </div>
-        <a href="#demo" class="btn btn-teal" data-i18n="nav_cta">Ver Demo →</a>
-      </div>
-
-      <!-- Hamburger -->
-      <button class="hbg" id="hbg" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
-    </nav>
-  </div>
-
-  <!-- Mobile menu -->
-  <div class="mob-menu" id="mob-menu">
-    <a href="#beneficios"    data-i18n="nav_benefits" data-close>Beneficios</a>
-    <a href="#como-funciona" data-i18n="nav_how" data-close>Cómo funciona</a>
-    <a href="#precios"       data-i18n="nav_pricing" data-close>Precios</a>
-    <a href="#demo"          data-i18n="nav_demo" data-close>Demo</a>
-    <div class="mob-lang" id="mob-lang">
-      <button class="lbtn" data-lang="es">ES</button>
-      <button class="lbtn" data-lang="en">EN</button>
-      <button class="lbtn" data-lang="fr">FR</button>
-      <button class="lbtn" data-lang="de">DE</button>
+  <div class="container nav">
+    <div class="nav-logo">
+      <!-- LOGO DEL REPO -->
+      <img src="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/logo.png" alt="FlowSuite" class="nav-logo-img">
     </div>
-    <a href="#demo" class="btn btn-teal" data-i18n="nav_cta" data-close style="margin-top:10px;justify-content:center">Ver Demo →</a>
+    
+    <div class="nav-right">
+      <!-- LANGUAGE SWITCHER -->
+      <div class="lang-sw">
+        <button class="lbtn on" onclick="setLang('es')" id="btn-es">ES</button>
+        <button class="lbtn" onclick="setLang('en')" id="btn-en">EN</button>
+        <button class="lbtn" onclick="setLang('fr')" id="btn-fr">FR</button>
+        <button class="lbtn" onclick="setLang('de')" id="btn-de">DE</button>
+      </div>
+      <a href="mailto:hello@flowsuite.ch" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.85rem;" data-i18n="contact">Contacto</a>
+    </div>
   </div>
 </header>
 
-
-<!-- ═══════════════════════════════════
-     HERO
-═══════════════════════════════════ -->
-<section class="hero has-grid">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="container">
-    <div class="hero-inner">
-
-      <!-- LEFT: copy -->
-      <div>
-        <div class="hero-badge">
-          <span class="hero-badge-dot"></span>
-          <span data-i18n="hero_badge">🚀 Empleados Digitales con IA — disponibles 24/7</span>
-        </div>
-
-        <h1 class="hero-h1">
-          <span class="line1" data-i18n="hero_line1">FlowSuite trabaja.</span>
-          <span class="line2" data-i18n="hero_line2">Tú te liberas.</span>
-        </h1>
-
-        <p class="hero-sub" data-i18n="hero_sub">
-          Agentes de IA que atienden llamadas, captan leads y cierran ventas mientras tú duermes. Automatización real para PYMEs y negocios locales — sin código, sin contratos.
-        </p>
-
-        <div class="hero-cta">
-          <a href="#demo" class="btn btn-teal" data-i18n="hero_cta1">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
-            Hablar con Flow
-          </a>
-          <a href="#precios" class="btn btn-outline" data-i18n="hero_cta2">Ver planes →</a>
-        </div>
-
-        <div class="hero-stats">
-          <div class="stat"><div class="n">24/7</div><div class="l" data-i18n="stat1">Disponibilidad</div></div>
-          <div class="stat"><div class="n">&lt;30s</div><div class="l" data-i18n="stat2">Respuesta</div></div>
-          <div class="stat"><div class="n">5+</div><div class="l" data-i18n="stat3">Idiomas</div></div>
-          <div class="stat"><div class="n">0€</div><div class="l" data-i18n="stat4">Permanencia</div></div>
-        </div>
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="container hero-inner">
+    
+    <!-- IZQUIERDA: COPY -->
+    <div class="hero-left">
+      <div class="hero-badge">
+        <span class="tag-dot" style="width:6px; height:6px; background:var(--teal); border-radius:50%;"></span>
+        <span data-i18n="badge">Disponible 24/7</span>
       </div>
-
-      <!-- RIGHT: Flow avatar card -->
-      <div class="hero-right">
-        <div class="flow-card">
-          <img class="flow-img"
-            src="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/Flow_sales-manager_flowsuite.png"
-            alt="Flow – Agente IA de FlowSuite"
-            loading="eager"
-            onerror="this.closest('.flow-card').style.display='none'">
-        </div>
-
-        <!-- Online badge -->
-        <div class="flow-live">
-          <span class="flow-live-dot"></span>
-          <div>
-            <div class="flow-live-name">Flow</div>
-            <div class="flow-live-sub" data-i18n="flow_online">Agente activa · en línea ahora</div>
-          </div>
-        </div>
-
-        <!-- Floating stats -->
-        <div class="fb fb-1">✅ <span data-i18n="fb1">Nuevo lead captado</span></div>
-        <div class="fb fb-2">🌍 <span data-i18n="fb2">Respondiendo en FR</span></div>
+      
+      <h1 class="hero-h1">
+        <span class="line1" data-i18n="h1_line1">Tu negocio no descansa,</span>
+        <span class="line2" data-i18n="h1_line2">nosotros tampoco.</span>
+      </h1>
+      
+      <p class="hero-sub" data-i18n="hero_desc">
+        ¿Sientes que el día no tiene suficientes horas? En FlowSuite, somos tu equipo virtual de expertos disponible 24/7. Mientras tú te enfocas en lo que mejor sabes hacer, nosotros nos encargamos de que el motor de tu negocio nunca se detenga.
+      </p>
+      
+      <div class="hero-cta">
+        <button onclick="openChat()" class="btn btn-teal" data-i18n="btn_chat">Hablar con FLOW</button>
+        <a href="#benefits" class="btn btn-outline" data-i18n="btn_more">Saber más</a>
       </div>
+    </div>
 
+    <!-- DERECHA: IMAGEN FLOW (SIN ANIMACIONES RARAS) -->
+    <div class="hero-right">
+      <!-- IMAGEN DEL REPO -->
+      <img src="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/agente-flow.png" alt="Flow Agent" class="flow-img">
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════ MARQUEE ═══════════ -->
-<div class="marquee-wrap">
-  <p class="marquee-label" data-i18n="logos_label">Integrado con las herramientas que ya usas</p>
-  <div style="overflow:hidden">
-    <div class="marquee-track">
-      <span class="mpill">📞 Twilio</span>
-      <span class="mpill">⚡ Make.com</span>
-      <span class="mpill">💳 Stripe</span>
-      <span class="mpill">🗂 Google Sheets</span>
-      <span class="mpill">💬 WhatsApp</span>
-      <span class="mpill">📧 Email</span>
-      <span class="mpill">🔗 Zapier</span>
-      <span class="mpill">📅 Google Calendar</span>
-      <span class="mpill">🎙 Twilio Voice</span>
-      <span class="mpill">📞 Twilio</span>
-      <span class="mpill">⚡ Make.com</span>
-      <span class="mpill">💳 Stripe</span>
-      <span class="mpill">🗂 Google Sheets</span>
-      <span class="mpill">💬 WhatsApp</span>
-      <span class="mpill">📧 Email</span>
-      <span class="mpill">🔗 Zapier</span>
-      <span class="mpill">📅 Google Calendar</span>
-      <span class="mpill">🎙 Twilio Voice</span>
-    </div>
-  </div>
-</div>
-
-
-<!-- ═══════════ VILLAIN ═══════════ -->
-<section class="villain" id="problema">
+<!-- BENEFICIOS (COPY EXACTO DE LA IMAGEN) -->
+<section id="benefits" class="benefits">
   <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="tag"><span class="tag-dot"></span><span data-i18n="villain_tag">El problema</span></div>
-      <h2 class="h2" data-i18n="villain_title">Cada día pierdes clientes <em>sin saberlo</em></h2>
-      <p class="lead" style="margin:0 auto" data-i18n="villain_sub">Cada llamada no contestada, cada lead sin seguimiento, cada hora fuera de horario — es dinero que va a la competencia.</p>
-    </div>
-    <div class="villain-grid">
-      <div class="villain-card reveal">
-        <div class="vc-icon">📵</div>
-        <h3 class="vc-title" data-i18n="vc1_title">Llamadas perdidas</h3>
-        <p class="vc-desc" data-i18n="vc1_desc">El 62% de las llamadas a negocios locales no se contestan. Cada una es un cliente potencial que busca a la competencia.</p>
-      </div>
-      <div class="villain-card reveal" style="transition-delay:.1s">
-        <div class="vc-icon">🌙</div>
-        <h3 class="vc-title" data-i18n="vc2_title">Fuera de horario = sin respuesta</h3>
-        <p class="vc-desc" data-i18n="vc2_desc">Los mejores leads llegan a las 22h o el domingo. Sin alguien disponible, se enfrían en minutos.</p>
-      </div>
-      <div class="villain-card reveal" style="transition-delay:.2s">
-        <div class="vc-icon">💸</div>
-        <h3 class="vc-title" data-i18n="vc3_title">Personal = coste fijo enorme</h3>
-        <p class="vc-desc" data-i18n="vc3_desc">Un recepcionista a tiempo completo cuesta 24.000€/año — y solo trabaja 8h al día en un idioma.</p>
-      </div>
-    </div>
-  </div>
-</section>
+    <h2 class="h2" style="text-align: center;" data-i18n="benefits_title">¿Qué hacemos por ti?</h2>
+    <p style="text-align: center; color: var(--g2); max-width: 600px; margin: 0 auto;" data-i18n="benefits_sub">
+      No solo mejoramos tu presencia online; construimos un ecosistema que trabaja para ti.
+    </p>
 
-
-<!-- ═══════════ BENEFITS ═══════════ -->
-<section class="benefits" id="beneficios">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="tag"><span class="tag-dot"></span><span data-i18n="benefits_tag">La solución</span></div>
-      <h2 class="h2" data-i18n="benefits_title">Tu negocio en <em>piloto automático</em></h2>
-      <p class="lead" style="margin:0 auto" data-i18n="benefits_sub">FlowSuite despliega empleados digitales que hacen el trabajo repetitivo 24/7 — para que tú hagas lo que solo tú puedes hacer.</p>
-    </div>
     <div class="benefits-grid">
-      <div class="bcard reveal"><div class="bicon">🎯</div><h3 class="btitle" data-i18n="b1t">Captación automática</h3><p class="bdesc" data-i18n="b1d">Flow responde en &lt;30 segundos, califica al lead y lo registra en tu CRM automáticamente. Nunca más una oportunidad perdida.</p></div>
-      <div class="bcard reveal" style="transition-delay:.1s"><div class="bicon">🌐</div><h3 class="btitle" data-i18n="b2t">Multilingüe nativo</h3><p class="bdesc" data-i18n="b2d">Español, inglés, francés, alemán, italiano. Tu agente detecta el idioma y responde con fluidez nativa — ideal para mercados internacionales.</p></div>
-      <div class="bcard reveal" style="transition-delay:.2s"><div class="bicon">⚡</div><h3 class="btitle" data-i18n="b3t">En marcha en 48h</h3><p class="bdesc" data-i18n="b3d">Sin código, sin IT. Te configuramos el agente y lo conectamos con tus herramientas actuales en menos de dos días.</p></div>
-      <div class="bcard reveal"><div class="bicon">📊</div><h3 class="btitle" data-i18n="b4t">Datos en tiempo real</h3><p class="bdesc" data-i18n="b4d">Cada conversación genera datos: qué preguntan, qué frena la venta, cómo mejorar tu oferta. Todo en tu Google Sheets.</p></div>
-      <div class="bcard reveal" style="transition-delay:.1s"><div class="bicon">💬</div><h3 class="btitle" data-i18n="b5t">Voz + texto + web</h3><p class="bdesc" data-i18n="b5d">Llamadas de teléfono, chat web y WhatsApp — un solo agente, todos los canales, una sola plataforma.</p></div>
-      <div class="bcard reveal" style="transition-delay:.2s"><div class="bicon">🔒</div><h3 class="btitle" data-i18n="b6t">GDPR/nDSG compliant</h3><p class="bdesc" data-i18n="b6d">Infraestructura conforme con normativa europea y suiza de protección de datos. Sin riesgos legales para ti ni tus clientes.</p></div>
+      <!-- Card 1 -->
+      <div class="bcard">
+        <span class="bicon">🚀</span>
+        <h3 class="btitle" data-i18n="card1_title">Venta en Piloto Automático</h3>
+        <p class="bdesc" data-i18n="card1_desc">
+          Convertimos leads en clientes reales mientras duermes, diseñas o consultas. Nuestro agente FLOW califica y seduce 24/7.
+        </p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bcard">
+        <span class="bicon">🎯</span>
+        <h3 class="btitle" data-i18n="card2_title">Marketing de Precisión</h3>
+        <p class="bdesc" data-i18n="card2_desc">
+          Automatizamos tus flujos de comunicación para que ningún prospecto se quede en el olvido. Seguimiento inteligente.
+        </p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bcard">
+        <span class="bicon">📈</span>
+        <h3 class="btitle" data-i18n="card3_title">Resultados Sólidos</h3>
+        <p class="bdesc" data-i18n="card3_desc">
+          Transformamos clics en clientes satisfechos y procesos manuales en ingresos recurrentes. Escala sin agotarte.
+        </p>
+      </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 60px;">
+      <p style="font-size: 1.2rem; color: var(--g1); margin-bottom: 30px; font-style: italic;" data-i18n="quote">
+        "Deja de perseguir clientes y permite que ellos te encuentren a ti."
+      </p>
+      <button onclick="openChat()" class="btn btn-teal" data-i18n="btn_start">Empezar Ahora</button>
     </div>
   </div>
 </section>
 
-
-<!-- ═══════════ HOW ═══════════ -->
-<section class="how" id="como-funciona">
-  <div class="container">
-    <div class="reveal" style="text-align:center;position:relative;z-index:1">
-      <div class="tag"><span class="tag-dot"></span><span data-i18n="how_tag">El proceso</span></div>
-      <h2 class="h2" data-i18n="how_title">De <strong>cero</strong> a funcionando en <em>4 pasos</em></h2>
-      <p class="lead" style="margin:0 auto" data-i18n="how_sub">Sin fricción, sin equipos técnicos, sin meses de espera.</p>
-    </div>
-    <div class="how-steps">
-      <div class="step reveal">
-        <div class="step-n t">01</div>
-        <h3 class="step-title" data-i18n="s1t">Diagnóstico</h3>
-        <p class="step-desc" data-i18n="s1d">Entendemos tu negocio, tus clientes y los procesos que quieres automatizar en una llamada de 30 minutos.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.1s">
-        <div class="step-n p">02</div>
-        <h3 class="step-title" data-i18n="s2t">Configuración</h3>
-        <p class="step-desc" data-i18n="s2d">Creamos tu agente IA personalizado con la voz, el tono y el conocimiento completo de tu negocio.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.2s">
-        <div class="step-n t">03</div>
-        <h3 class="step-title" data-i18n="s3t">Integración</h3>
-        <p class="step-desc" data-i18n="s3d">Conectamos el agente con tu número real, tu CRM, tu calendario y todas las herramientas que ya usas.</p>
-      </div>
-      <div class="step reveal" style="transition-delay:.3s">
-        <div class="step-n p">04</div>
-        <h3 class="step-title" data-i18n="s4t">Lanzamiento</h3>
-        <p class="step-desc" data-i18n="s4d">Tu empleado digital entra en funciones. Tú supervisas los resultados y nosotros optimizamos continuamente.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ DEMO ═══════════ -->
-<section class="demo" id="demo">
-  <div class="container">
-    <div class="demo-inner">
-
-      <div class="demo-text reveal">
-        <div class="tag"><span class="tag-dot"></span><span data-i18n="demo_tag">Flow en vivo</span></div>
-        <h2 class="h2" data-i18n="demo_title">Habla con <em>Flow</em> ahora mismo</h2>
-        <p class="lead" data-i18n="demo_sub">Flow es nuestra agente de ventas — está en esta página, lista para responderte en tiempo real. Haz clic en el chat o llámanos.</p>
-        <div class="hero-cta" style="margin-top:32px">
-          <a href="mailto:info@flowsuite.ch" class="btn btn-teal" data-i18n="demo_email">✉️ Email</a>
-          <a href="tel:+41779413532" class="btn btn-outline" data-i18n="demo_call">📞 Llamar</a>
-        </div>
-      </div>
-
-      <!-- Phone mockup with Flow avatar -->
-      <div class="reveal" style="transition-delay:.1s">
-        <div class="phone-wrap">
-          <div class="phone">
-            <div class="phone-header">
-              <div class="ph-avatar">
-                <img src="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/Flow_sales-manager_flowsuite.png"
-                  alt="Flow"
-                  onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 40 40%22><circle cx=%2220%22 cy=%2220%22 r=%2220%22 fill=%22%2300E5C8%22/><text x=%2220%22 y=%2225%22 text-anchor=%22middle%22 font-size=%2214%22 fill=%22%2302060F%22>F</text></svg>'">
-              </div>
-              <div>
-                <div class="ph-name">Flow</div>
-                <div class="ph-status"><span class="ph-dot"></span><span data-i18n="flow_online">En línea ahora</span></div>
-              </div>
-            </div>
-
-            <div class="voice-bar">
-              <span class="vb-label">🎙 LIVE</span>
-              <div class="waves">
-                <div class="wave"></div><div class="wave"></div><div class="wave"></div>
-                <div class="wave"></div><div class="wave"></div><div class="wave"></div>
-                <div class="wave"></div><div class="wave"></div><div class="wave"></div>
-                <div class="wave"></div>
-              </div>
-            </div>
-
-            <div class="chat" id="demo-chat">
-              <div class="msg msg-flow" data-i18n="chat1">👋 Hola, soy Flow. ¿En qué puedo ayudarte hoy?</div>
-              <div class="msg msg-user" data-i18n="chat2">Quiero saber cuánto cuesta</div>
-              <div class="msg msg-flow" data-i18n="chat3">¡Claro! Tenemos planes desde 99€/mes. ¿Cuántas llamadas recibe tu negocio aproximadamente?</div>
-              <div class="typing"><span></span><span></span><span></span></div>
-            </div>
-          </div>
-
-          <div class="db db-1">✅ <span data-i18n="fb1">Nuevo lead captado</span></div>
-          <div class="db db-2">💰 <span data-i18n="fb3">Cita confirmada</span></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ PRICING ═══════════ -->
-<section class="pricing" id="precios">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="tag"><span class="tag-dot"></span><span data-i18n="pricing_tag">Planes</span></div>
-      <h2 class="h2" data-i18n="pricing_title">El precio justo para <em>cada etapa</em></h2>
-      <p class="lead" style="margin:0 auto" data-i18n="pricing_sub">Sin permanencia. Cancela cuando quieras.</p>
-    </div>
-    <div class="price-grid">
-
-      <!-- Presencia -->
-      <div class="pcard reveal">
-        <div class="p-tier" data-i18n="p1name">Presencia</div>
-        <p class="p-desc" data-i18n="p1desc">Para negocios que quieren estar disponibles y nunca perder una llamada.</p>
-        <div class="p-price"><span class="p-curr">€</span><span class="p-num">99</span><span class="p-mo" data-i18n="pmo">/mes</span></div>
-        <p class="p-alt" data-i18n="p1chf">129 CHF/mes en Suiza</p>
-        <div class="p-div"></div>
-        <ul class="p-feats">
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p1f1">Agente de voz IA activo 24/7</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p1f2">Hasta 200 llamadas/mes</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p1f3">Widget de chat en tu web</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p1f4">Registro de leads automático</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p1f5">1 idioma incluido</span></li>
-        </ul>
-        <a href="#demo" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="pcta">Empezar ahora</a>
-      </div>
-
-      <!-- Captación - featured -->
-      <div class="pcard best reveal" style="transition-delay:.1s">
-        <div class="pbadge" data-i18n="pbest">Más popular</div>
-        <div class="p-tier" data-i18n="p2name">Captación</div>
-        <p class="p-desc" data-i18n="p2desc">Para negocios en crecimiento que quieren más leads y ventas, automatizados.</p>
-        <div class="p-price"><span class="p-curr">€</span><span class="p-num">179</span><span class="p-mo" data-i18n="pmo">/mes</span></div>
-        <p class="p-alt" data-i18n="p2chf">229 CHF/mes en Suiza</p>
-        <div class="p-div"></div>
-        <ul class="p-feats">
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p2f1">Todo lo del plan Presencia</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p2f2">Hasta 600 llamadas/mes</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p2f3">CRM integrado (Google Sheets)</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p2f4">3 idiomas incluidos</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p2f5">Notificaciones WhatsApp/Email</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p2f6">Agente de texto incluido</span></li>
-        </ul>
-        <a href="#demo" class="btn btn-purple" style="width:100%;justify-content:center" data-i18n="pcta">Empezar ahora</a>
-      </div>
-
-      <!-- Suite -->
-      <div class="pcard reveal" style="transition-delay:.2s">
-        <div class="p-tier" data-i18n="p3name">Suite</div>
-        <p class="p-desc" data-i18n="p3desc">La solución completa para automatizar todos tus procesos de cliente.</p>
-        <div class="p-price"><span class="p-curr">€</span><span class="p-num">299</span><span class="p-mo" data-i18n="pmo">/mes</span></div>
-        <p class="p-alt" data-i18n="p3chf">389 CHF/mes en Suiza</p>
-        <div class="p-div"></div>
-        <ul class="p-feats">
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p3f1">Todo lo del plan Captación</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p3f2">Llamadas ilimitadas</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p3f3">5 idiomas + dialectos</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p3f4">Integraciones personalizadas</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p3f5">Dashboard de análisis avanzado</span></li>
-          <li class="pf"><span class="pf-ok">✓</span><span data-i18n="p3f6">Soporte prioritario dedicado</span></li>
-        </ul>
-        <a href="#demo" class="btn btn-outline" style="width:100%;justify-content:center" data-i18n="pcta">Empezar ahora</a>
-      </div>
-
-    </div>
-    <div class="risk-row reveal" style="margin-top:36px">
-      <div class="risk-item"><span class="ri-icon">✓</span><span data-i18n="risk1">Sin contrato de permanencia</span></div>
-      <div class="risk-item"><span class="ri-icon">✓</span><span data-i18n="risk2">Activación en 48h</span></div>
-      <div class="risk-item"><span class="ri-icon">✓</span><span data-i18n="risk3">Soporte incluido</span></div>
-      <div class="risk-item"><span class="ri-icon">✓</span><span data-i18n="risk4">Cancela cuando quieras</span></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ FAQ ═══════════ -->
-<section class="faq">
-  <div class="container">
-    <div class="reveal" style="text-align:center">
-      <div class="tag"><span class="tag-dot"></span><span data-i18n="faq_tag">FAQ</span></div>
-      <h2 class="h2" data-i18n="faq_title">Preguntas <em>frecuentes</em></h2>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-item">
-        <button class="faq-q"><span data-i18n="fq1">¿Necesito conocimientos técnicos para configurarlo?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="fa1">No. Nosotros nos encargamos de todo. Solo necesitas explicarnos tu negocio en una llamada y nosotros construimos, configuramos e integramos el agente. Tú no tocas código.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span data-i18n="fq2">¿En cuánto tiempo está listo el agente?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="fa2">En 48 horas desde la llamada de diagnóstico. Para configuraciones más complejas con múltiples idiomas e integraciones, puede tardar hasta 5 días hábiles.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span data-i18n="fq3">¿Puedo cancelar en cualquier momento?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="fa3">Sí. No hay contratos de permanencia. Puedes cancelar con 30 días de antelación, sin penalización ni letra pequeña.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span data-i18n="fq4">¿El agente realmente suena natural al hablar?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="fa4">Sí. Usamos voces de última generación (síntesis neural) que suenan completamente humanas. La mayoría de usuarios no saben que están hablando con una IA hasta que se lo decimos.</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q"><span data-i18n="fq5">¿Cumple con el GDPR y la ley suiza (nDSG)?</span><span class="faq-icon">+</span></button>
-        <div class="faq-a"><div class="faq-a-inner" data-i18n="fa5">Sí. Nuestra infraestructura cumple con el Reglamento General de Protección de Datos europeo y con la nueva Ley Federal suiza de Protección de Datos. Tratamos los datos de tus clientes con los más altos estándares.</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ FINAL CTA ═══════════ -->
-<section class="final-cta">
-  <div class="container">
-    <div class="cta-box reveal">
-      <div class="tag" style="margin:0 auto 20px"><span class="tag-dot"></span><span data-i18n="cta_tag">Empieza hoy</span></div>
-      <h2 class="h2" data-i18n="cta_title">Tu competencia ya usa IA.<br><em>¿Y tú?</em></h2>
-      <p class="lead" data-i18n="cta_sub">Cada día sin Flow es un día de leads perdidos y clientes sin atender. Empieza en 48h, sin contrato, sin riesgos.</p>
-      <div class="cta-btns">
-        <a href="mailto:info@flowsuite.ch" class="btn btn-teal" data-i18n="cta_btn1">✉️ Contactar ahora</a>
-        <a href="tel:+41779413532" class="btn btn-outline" data-i18n="cta_btn2">📞 Llamar a FlowSuite</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ═══════════ FOOTER ═══════════ -->
 <footer>
   <div class="container">
-    <div class="footer-grid">
-      <div>
-        <div class="f-logo">
-          <img src="https://raw.githubusercontent.com/rodrigodiazv/Flowsuite_website/main/logo.png"
-            alt="FlowSuite" style="height:34px"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span style="display:none;font-family:'Syne',sans-serif;font-weight:800;font-size:1.1rem;color:#00E5C8">FlowSuite</span>
-        </div>
-        <p class="f-desc" data-i18n="f_desc">Empleados digitales con IA para PYMEs y negocios locales. Automatización real, resultados reales.</p>
-        <div class="f-contact">
-          <a href="mailto:info@flowsuite.ch">info@flowsuite.ch</a><br>
-          <a href="tel:+41779413532">+41 77 941 35 32</a> (CH)<br>
-          <a href="tel:+34634134466">+34 634 13 44 66</a> (ES)
-        </div>
-      </div>
-      <div>
-        <p class="f-title" data-i18n="f_product">Producto</p>
-        <ul class="f-links">
-          <li><a href="#beneficios" data-i18n="nav_benefits">Beneficios</a></li>
-          <li><a href="#como-funciona" data-i18n="nav_how">Cómo funciona</a></li>
-          <li><a href="#precios" data-i18n="nav_pricing">Precios</a></li>
-          <li><a href="#demo" data-i18n="nav_demo">Demo</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="f-title" data-i18n="f_sectors">Sectores</p>
-        <ul class="f-links">
-          <li><a href="#" data-i18n="f_hotel">Hoteles &amp; Turismo</a></li>
-          <li><a href="#" data-i18n="f_health">Salud &amp; Clínicas</a></li>
-          <li><a href="#" data-i18n="f_re">Inmobiliarias</a></li>
-          <li><a href="#" data-i18n="f_retail">Retail &amp; E-commerce</a></li>
-        </ul>
-      </div>
-      <div>
-        <p class="f-title" data-i18n="f_legal">Legal</p>
-        <ul class="f-links">
-          <li><a href="/privacy" data-i18n="f_privacy">Política de Privacidad</a></li>
-          <li><a href="/terms" data-i18n="f_terms">Términos de Servicio</a></li>
-          <li><a href="/imprint" data-i18n="f_imprint">Aviso Legal</a></li>
-          <li><a href="/gdpr" data-i18n="f_gdpr">GDPR / nDSG</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="f-bottom">
-      <div class="f-legal">
-        FlowSuite · Einzelfirma · Chemin de la Raverettaz 6, 1862 Ormont-Dessous (Les Mosses), Vaud, Suiza<br>
-        Exento de IVA Art.&nbsp;10 LTVA/MWSTG · Jurisdicción: Tribunal civil d'Aigle, Vaud
-      </div>
-      <div class="f-copy">© 2025 FlowSuite. Todos los derechos reservados.</div>
+    <p>&copy; 2026 FlowSuite. Switzerland.</p>
+    <div style="margin-top: 10px; display: flex; gap: 20px; justify-content: center;">
+      <a href="#" data-i18n="link_privacy">Privacidad</a>
+      <a href="#" data-i18n="link_terms">Términos</a>
     </div>
   </div>
 </footer>
 
-
-<!-- ═══════════ WIDGET FLOW ═══════════ -->
-<link rel="stylesheet" href="https://sidewidget.vercel.app/react-widget-uv.css">
-<script>window.process = { env: {} };</script>
-<script src="https://sidewidget.vercel.app/react-widget-uv.iife.js"></script>
-<react-widget-uv
-  agent_id="33c13ac4-3b27-4c7a-bb79-8dc199d89d98"
-  schema="d7035a8e-3f44-4877-a11f-3b17d8ef808611"
-  type="thunderemotionlite">
-</react-widget-uv>
-
-
-<!-- ═══════════ JS ═══════════ -->
+<!-- SCRIPT DE TRADUCCIÓN Y LÓGICA -->
 <script>
-/* ── TRADUCCIONES ──────────────────────────────────────── */
-const T = {
-es:{
-  nav_benefits:"Beneficios",nav_how:"Cómo funciona",nav_pricing:"Precios",nav_demo:"Demo",nav_cta:"Ver Demo →",
-  hero_badge:"🚀 Empleados Digitales con IA — disponibles 24/7",
-  hero_line1:"FlowSuite trabaja.",hero_line2:"Tú te liberas.",
-  hero_sub:"Agentes de IA que atienden llamadas, captan leads y cierran ventas mientras tú duermes. Automatización real para PYMEs — sin código, sin contratos.",
-  hero_cta1:"▶ Hablar con Flow",hero_cta2:"Ver planes →",
-  stat1:"Disponibilidad",stat2:"Respuesta",stat3:"Idiomas",stat4:"Permanencia",
-  flow_online:"Agente activa · en línea ahora",
-  fb1:"Nuevo lead captado",fb2:"Respondiendo en FR",fb3:"Cita confirmada",
-  logos_label:"Integrado con las herramientas que ya usas",
-  villain_tag:"El problema",villain_title:"Cada día pierdes clientes <em>sin saberlo</em>",
-  villain_sub:"Cada llamada no contestada, cada lead sin seguimiento — es dinero que va a la competencia.",
-  vc1_title:"Llamadas perdidas",vc1_desc:"El 62% de las llamadas no se contestan. Cada una es un cliente que busca a la competencia.",
-  vc2_title:"Fuera de horario = sin respuesta",vc2_desc:"Los mejores leads llegan a las 22h o el domingo. Sin alguien disponible, se enfrían en minutos.",
-  vc3_title:"Personal = coste fijo enorme",vc3_desc:"Un recepcionista a tiempo completo cuesta 24.000€/año y solo trabaja 8h en un idioma.",
-  benefits_tag:"La solución",benefits_title:"Tu negocio en <em>piloto automático</em>",
-  benefits_sub:"FlowSuite despliega empleados digitales que hacen el trabajo repetitivo 24/7.",
-  b1t:"Captación automática",b1d:"Flow responde en <30s, califica al lead y lo registra en tu CRM. Nunca más una oportunidad perdida.",
-  b2t:"Multilingüe nativo",b2d:"Español, inglés, francés, alemán, italiano. Tu agente detecta el idioma y responde con fluidez nativa.",
-  b3t:"En marcha en 48h",b3d:"Sin código, sin IT. Configurado y conectado con tus herramientas en menos de dos días.",
-  b4t:"Datos en tiempo real",b4d:"Cada conversación genera datos sobre qué frena la venta y cómo mejorar tu oferta.",
-  b5t:"Voz + texto + web",b5d:"Llamadas, chat web y WhatsApp — un solo agente, todos los canales.",
-  b6t:"GDPR/nDSG compliant",b6d:"Infraestructura conforme con normativa europea y suiza. Sin riesgos legales.",
-  how_tag:"El proceso",how_title:"De <strong>cero</strong> a funcionando en <em>4 pasos</em>",
-  how_sub:"Sin fricción, sin equipos técnicos, sin meses de espera.",
-  s1t:"Diagnóstico",s1d:"Entendemos tu negocio y procesos en una llamada de 30 minutos.",
-  s2t:"Configuración",s2d:"Creamos tu agente IA con voz, tono y conocimiento de tu negocio.",
-  s3t:"Integración",s3d:"Conectamos con tu número, CRM, calendario y herramientas actuales.",
-  s4t:"Lanzamiento",s4d:"Tu empleado digital entra en funciones. Nosotros optimizamos continuamente.",
-  demo_tag:"Flow en vivo",demo_title:"Habla con <em>Flow</em> ahora mismo",
-  demo_sub:"Flow está en esta página, lista para responderte. Haz clic en el chat o contáctanos.",
-  demo_email:"✉️ Email",demo_call:"📞 Llamar",
-  chat1:"👋 Hola, soy Flow. ¿En qué puedo ayudarte?",
-  chat2:"¿Cuánto cuesta?",
-  chat3:"Planes desde 99€/mes. ¿Cuántas llamadas recibe tu negocio?",
-  pricing_tag:"Planes",pricing_title:"El precio justo para <em>cada etapa</em>",pricing_sub:"Sin permanencia. Cancela cuando quieras.",
-  p1name:"Presencia",p1desc:"Para negocios que quieren disponibilidad 24/7 sin perder una llamada.",p1chf:"129 CHF/mes en Suiza",
-  p1f1:"Agente de voz IA 24/7",p1f2:"Hasta 200 llamadas/mes",p1f3:"Chat widget en tu web",p1f4:"Registro automático de leads",p1f5:"1 idioma incluido",
-  p2name:"Captación",p2desc:"Para negocios en crecimiento que quieren más leads y ventas automatizados.",p2chf:"229 CHF/mes en Suiza",
-  p2f1:"Todo lo del plan Presencia",p2f2:"Hasta 600 llamadas/mes",p2f3:"CRM integrado (Google Sheets)",p2f4:"3 idiomas incluidos",p2f5:"Notificaciones WhatsApp/Email",p2f6:"Agente de texto incluido",
-  p3name:"Suite",p3desc:"Solución completa para automatizar todos los procesos de cliente.",p3chf:"389 CHF/mes en Suiza",
-  p3f1:"Todo lo del plan Captación",p3f2:"Llamadas ilimitadas",p3f3:"5 idiomas + dialectos",p3f4:"Integraciones personalizadas",p3f5:"Dashboard avanzado",p3f6:"Soporte prioritario dedicado",
-  pmo:"/mes",pbest:"Más popular",pcta:"Empezar ahora",
-  risk1:"Sin permanencia",risk2:"Activación en 48h",risk3:"Soporte incluido",risk4:"Cancela cuando quieras",
-  faq_tag:"FAQ",faq_title:"Preguntas <em>frecuentes</em>",
-  fq1:"¿Necesito conocimientos técnicos?",fa1:"No. Nosotros nos encargamos de todo — configuración, integración y mantenimiento. Tú solo explicas tu negocio.",
-  fq2:"¿En cuánto tiempo está listo?",fa2:"En 48h desde la llamada de diagnóstico. Configuraciones complejas pueden tardar hasta 5 días hábiles.",
-  fq3:"¿Puedo cancelar en cualquier momento?",fa3:"Sí. Sin permanencia. Cancelación con 30 días de antelación, sin penalización.",
-  fq4:"¿El agente suena natural?",fa4:"Sí. Usamos voces neurales de última generación. La mayoría de usuarios no detectan que es IA.",
-  fq5:"¿Cumple con GDPR/nDSG?",fa5:"Sí. Infraestructura conforme con GDPR europeo y ley suiza nDSG.",
-  cta_tag:"Empieza hoy",cta_title:"Tu competencia ya usa IA.<br><em>¿Y tú?</em>",
-  cta_sub:"Cada día sin Flow es un día de leads perdidos. Empieza en 48h, sin contrato.",
-  cta_btn1:"✉️ Contactar ahora",cta_btn2:"📞 Llamar a FlowSuite",
-  f_desc:"Empleados digitales con IA para PYMEs. Automatización real, resultados reales.",
-  f_product:"Producto",f_sectors:"Sectores",f_legal:"Legal",
-  f_hotel:"Hoteles & Turismo",f_health:"Salud & Clínicas",f_re:"Inmobiliarias",f_retail:"Retail",
-  f_privacy:"Política de Privacidad",f_terms:"Términos",f_imprint:"Aviso Legal",f_gdpr:"GDPR/nDSG"
-},
-en:{
-  nav_benefits:"Benefits",nav_how:"How it works",nav_pricing:"Pricing",nav_demo:"Demo",nav_cta:"See Demo →",
-  hero_badge:"🚀 AI Digital Employees — available 24/7",
-  hero_line1:"FlowSuite works.",hero_line2:"You get free.",
-  hero_sub:"AI agents that answer calls, capture leads and close sales while you sleep. Real automation for SMEs — no code, no contracts.",
-  hero_cta1:"▶ Talk to Flow",hero_cta2:"See plans →",
-  stat1:"Availability",stat2:"Response",stat3:"Languages",stat4:"No lock-in",
-  flow_online:"Agent active · online now",
-  fb1:"New lead captured",fb2:"Responding in FR",fb3:"Appointment confirmed",
-  logos_label:"Integrated with the tools you already use",
-  villain_tag:"The problem",villain_title:"Every day you lose clients <em>without knowing</em>",
-  villain_sub:"Every missed call, every unfollow lead — it's money going to the competition.",
-  vc1_title:"Missed calls",vc1_desc:"62% of calls to local businesses go unanswered. Each one is a potential client going to a competitor.",
-  vc2_title:"After hours = no answer",vc2_desc:"The best leads come at 10pm or Sunday. Without someone available, they go cold in minutes.",
-  vc3_title:"Staff = huge fixed cost",vc3_desc:"A full-time receptionist costs €24,000/year and only works 8h a day in one language.",
-  benefits_tag:"The solution",benefits_title:"Your business on <em>autopilot</em>",
-  benefits_sub:"FlowSuite deploys digital employees that handle repetitive work 24/7.",
-  b1t:"Automatic capture",b1d:"Flow responds in <30s, qualifies leads and logs them to your CRM. Never miss an opportunity again.",
-  b2t:"Native multilingual",b2d:"Spanish, English, French, German, Italian. Your agent detects the language and responds fluently.",
-  b3t:"Live in 48h",b3d:"No code, no IT. Configured and connected to your tools in less than two days.",
-  b4t:"Real-time data",b4d:"Every conversation generates data about what stops sales and how to improve your offer.",
-  b5t:"Voice + text + web",b5d:"Phone calls, web chat and WhatsApp — one agent, all channels.",
-  b6t:"GDPR/nDSG compliant",b6d:"Infrastructure compliant with European and Swiss data protection regulations.",
-  how_tag:"The process",how_title:"From <strong>zero</strong> to live in <em>4 steps</em>",
-  how_sub:"No friction, no tech teams, no months of waiting.",
-  s1t:"Discovery",s1d:"We understand your business and processes in a 30-min call.",
-  s2t:"Configuration",s2d:"We build your AI agent with voice, tone and knowledge of your business.",
-  s3t:"Integration",s3d:"We connect to your number, CRM, calendar and existing tools.",
-  s4t:"Launch",s4d:"Your digital employee goes live. We optimize continuously.",
-  demo_tag:"Flow live",demo_title:"Talk to <em>Flow</em> right now",
-  demo_sub:"Flow is on this page, ready to respond. Click the chat or contact us.",
-  demo_email:"✉️ Email",demo_call:"📞 Call",
-  chat1:"👋 Hi, I'm Flow. How can I help you today?",
-  chat2:"How much does it cost?",
-  chat3:"Plans from €99/month. How many calls does your business receive?",
-  pricing_tag:"Plans",pricing_title:"The right price for <em>every stage</em>",pricing_sub:"No lock-in. Cancel anytime.",
-  p1name:"Presence",p1desc:"For businesses that want 24/7 availability and never miss a call.",p1chf:"129 CHF/month in Switzerland",
-  p1f1:"AI voice agent 24/7",p1f2:"Up to 200 calls/month",p1f3:"Chat widget on your website",p1f4:"Automatic lead registration",p1f5:"1 language included",
-  p2name:"Capture",p2desc:"For growing businesses that want more automated leads and sales.",p2chf:"229 CHF/month in Switzerland",
-  p2f1:"Everything in Presence",p2f2:"Up to 600 calls/month",p2f3:"Integrated CRM (Google Sheets)",p2f4:"3 languages included",p2f5:"WhatsApp/Email notifications",p2f6:"Text agent included",
-  p3name:"Suite",p3desc:"Complete solution to automate all customer processes.",p3chf:"389 CHF/month in Switzerland",
-  p3f1:"Everything in Capture",p3f2:"Unlimited calls",p3f3:"5 languages + dialects",p3f4:"Custom integrations",p3f5:"Advanced dashboard",p3f6:"Dedicated priority support",
-  pmo:"/month",pbest:"Most popular",pcta:"Get started",
-  risk1:"No lock-in",risk2:"Live in 48h",risk3:"Support included",risk4:"Cancel anytime",
-  faq_tag:"FAQ",faq_title:"Frequently asked <em>questions</em>",
-  fq1:"Do I need technical knowledge?",fa1:"No. We handle everything — setup, integration and maintenance. You just explain your business.",
-  fq2:"How long until it's ready?",fa2:"48h after the discovery call. Complex configurations may take up to 5 business days.",
-  fq3:"Can I cancel at any time?",fa3:"Yes. No lock-in. Cancellation with 30 days notice, no penalty.",
-  fq4:"Does the agent sound natural?",fa4:"Yes. We use state-of-the-art neural voices. Most users can't tell it's AI.",
-  fq5:"Is it GDPR/nDSG compliant?",fa5:"Yes. Infrastructure compliant with European GDPR and Swiss nDSG law.",
-  cta_tag:"Start today",cta_title:"Your competition already uses AI.<br><em>Do you?</em>",
-  cta_sub:"Every day without Flow is a day of lost leads. Start in 48h, no contract.",
-  cta_btn1:"✉️ Contact now",cta_btn2:"📞 Call FlowSuite",
-  f_desc:"AI digital employees for SMEs. Real automation, real results.",
-  f_product:"Product",f_sectors:"Sectors",f_legal:"Legal",
-  f_hotel:"Hotels & Tourism",f_health:"Health & Clinics",f_re:"Real Estate",f_retail:"Retail",
-  f_privacy:"Privacy Policy",f_terms:"Terms",f_imprint:"Legal Notice",f_gdpr:"GDPR/nDSG"
-},
-fr:{
-  nav_benefits:"Avantages",nav_how:"Comment ça marche",nav_pricing:"Tarifs",nav_demo:"Démo",nav_cta:"Voir la démo →",
-  hero_badge:"🚀 Employés numériques IA — disponibles 24h/24",
-  hero_line1:"FlowSuite travaille.",hero_line2:"Vous êtes libre.",
-  hero_sub:"Des agents IA qui répondent aux appels, capturent des prospects et concluent des ventes pendant que vous dormez.",
-  hero_cta1:"▶ Parler à Flow",hero_cta2:"Voir les plans →",
-  stat1:"Disponibilité",stat2:"Réponse",stat3:"Langues",stat4:"Sans engagement",
-  flow_online:"Agent actif · en ligne maintenant",
-  fb1:"Nouveau lead capturé",fb2:"Réponse en cours",fb3:"RDV confirmé",
-  logos_label:"Intégré avec les outils que vous utilisez déjà",
-  villain_tag:"Le problème",villain_title:"Chaque jour vous perdez des clients <em>sans le savoir</em>",
-  villain_sub:"Chaque appel manqué, chaque lead sans suivi — c'est de l'argent qui va à la concurrence.",
-  vc1_title:"Appels manqués",vc1_desc:"62% des appels aux entreprises locales restent sans réponse. Chacun est un client qui va à la concurrence.",
-  vc2_title:"Hors horaires = pas de réponse",vc2_desc:"Les meilleurs leads arrivent à 22h ou le dimanche. Sans disponibilité, ils refroidissent en minutes.",
-  vc3_title:"Personnel = coût fixe énorme",vc3_desc:"Un réceptionniste coûte 24 000€/an et ne travaille que 8h dans une seule langue.",
-  benefits_tag:"La solution",benefits_title:"Votre entreprise en <em>pilote automatique</em>",
-  benefits_sub:"FlowSuite déploie des employés numériques qui font le travail répétitif 24h/24.",
-  b1t:"Capture automatique",b1d:"Flow répond en <30s, qualifie le lead et l'enregistre dans votre CRM.",
-  b2t:"Multilingue natif",b2d:"Espagnol, anglais, français, allemand, italien. Votre agent répond avec fluidité native.",
-  b3t:"En ligne en 48h",b3d:"Sans code, sans IT. Configuré et connecté en moins de deux jours.",
-  b4t:"Données en temps réel",b4d:"Chaque conversation génère des données pour améliorer votre offre.",
-  b5t:"Voix + texte + web",b5d:"Appels, chat web et WhatsApp — un agent, tous les canaux.",
-  b6t:"Conforme RGPD/nDSG",b6d:"Infrastructure conforme aux réglementations européennes et suisses.",
-  how_tag:"Le processus",how_title:"De <strong>zéro</strong> à opérationnel en <em>4 étapes</em>",
-  how_sub:"Sans friction, sans équipes techniques, sans mois d'attente.",
-  s1t:"Diagnostic",s1d:"Nous comprenons votre entreprise en un appel de 30 minutes.",
-  s2t:"Configuration",s2d:"Nous créons votre agent IA avec la voix de votre entreprise.",
-  s3t:"Intégration",s3d:"Connexion à votre numéro, CRM et outils actuels.",
-  s4t:"Lancement",s4d:"Votre employé numérique entre en fonction. Nous optimisons en continu.",
-  demo_tag:"Flow en direct",demo_title:"Parlez à <em>Flow</em> maintenant",
-  demo_sub:"Flow est sur cette page, prête à vous répondre.",
-  demo_email:"✉️ Email",demo_call:"📞 Appeler",
-  chat1:"👋 Bonjour, je suis Flow. Comment puis-je vous aider ?",
-  chat2:"Combien ça coûte ?",
-  chat3:"Plans à partir de 99€/mois. Combien d'appels reçoit votre entreprise ?",
-  pricing_tag:"Plans",pricing_title:"Le juste prix pour <em>chaque étape</em>",pricing_sub:"Sans engagement. Annulez quand vous voulez.",
-  p1name:"Présence",p1desc:"Pour être disponible 24/7 et ne jamais manquer un appel.",p1chf:"129 CHF/mois en Suisse",
-  p1f1:"Agent vocal IA 24h/24",p1f2:"Jusqu'à 200 appels/mois",p1f3:"Chat widget sur votre site",p1f4:"Enregistrement automatique",p1f5:"1 langue incluse",
-  p2name:"Captation",p2desc:"Pour les entreprises en croissance qui veulent plus de leads automatisés.",p2chf:"229 CHF/mois en Suisse",
-  p2f1:"Tout du plan Présence",p2f2:"Jusqu'à 600 appels/mois",p2f3:"CRM intégré",p2f4:"3 langues incluses",p2f5:"Notifications WhatsApp/Email",p2f6:"Agent texte inclus",
-  p3name:"Suite",p3desc:"Solution complète pour automatiser tous vos processus clients.",p3chf:"389 CHF/mois en Suisse",
-  p3f1:"Tout du plan Captation",p3f2:"Appels illimités",p3f3:"5 langues + dialectes",p3f4:"Intégrations personnalisées",p3f5:"Tableau de bord avancé",p3f6:"Support prioritaire dédié",
-  pmo:"/mois",pbest:"Le plus populaire",pcta:"Commencer",
-  risk1:"Sans engagement",risk2:"En ligne en 48h",risk3:"Support inclus",risk4:"Annulez quand vous voulez",
-  faq_tag:"FAQ",faq_title:"Questions <em>fréquentes</em>",
-  fq1:"Faut-il des connaissances techniques ?",fa1:"Non. Nous gérons tout — configuration, intégration et maintenance.",
-  fq2:"En combien de temps est-il prêt ?",fa2:"En 48h après l'appel de diagnostic.",
-  fq3:"Puis-je annuler à tout moment ?",fa3:"Oui. Sans engagement. Résiliation avec 30 jours de préavis.",
-  fq4:"L'agent sonne-t-il naturel ?",fa4:"Oui. Nous utilisons des voix neurales de dernière génération.",
-  fq5:"Conforme RGPD/nDSG ?",fa5:"Oui. Infrastructure conforme aux réglementations européennes et suisses.",
-  cta_tag:"Commencez aujourd'hui",cta_title:"Vos concurrents utilisent déjà l'IA.<br><em>Et vous ?</em>",
-  cta_sub:"Chaque jour sans Flow, des leads sont perdus. Démarrez en 48h, sans contrat.",
-  cta_btn1:"✉️ Contacter maintenant",cta_btn2:"📞 Appeler FlowSuite",
-  f_desc:"Employés numériques IA pour PME. Automatisation réelle, résultats réels.",
-  f_product:"Produit",f_sectors:"Secteurs",f_legal:"Légal",
-  f_hotel:"Hôtels & Tourisme",f_health:"Santé & Cliniques",f_re:"Immobilier",f_retail:"Commerce",
-  f_privacy:"Confidentialité",f_terms:"Conditions",f_imprint:"Mentions légales",f_gdpr:"RGPD/nDSG"
-},
-de:{
-  nav_benefits:"Vorteile",nav_how:"So funktioniert's",nav_pricing:"Preise",nav_demo:"Demo",nav_cta:"Demo ansehen →",
-  hero_badge:"🚀 KI-Digitalmitarbeiter — 24/7 verfügbar",
-  hero_line1:"FlowSuite arbeitet.",hero_line2:"Sie sind frei.",
-  hero_sub:"KI-Agenten, die Anrufe entgegennehmen, Leads erfassen und Verkäufe abschließen, während Sie schlafen.",
-  hero_cta1:"▶ Mit Flow sprechen",hero_cta2:"Pläne ansehen →",
-  stat1:"Verfügbarkeit",stat2:"Reaktionszeit",stat3:"Sprachen",stat4:"Keine Bindung",
-  flow_online:"Agent aktiv · jetzt online",
-  fb1:"Neuer Lead erfasst",fb2:"Antwortet auf FR",fb3:"Termin bestätigt",
-  logos_label:"Integriert mit den Tools, die Sie bereits nutzen",
-  villain_tag:"Das Problem",villain_title:"Jeden Tag verlieren Sie Kunden <em>ohne es zu wissen</em>",
-  villain_sub:"Jeder verpasste Anruf, jeder Lead ohne Follow-up — das ist Geld, das zur Konkurrenz geht.",
-  vc1_title:"Verpasste Anrufe",vc1_desc:"62% der Anrufe bei lokalen Unternehmen bleiben unbeantwortet.",
-  vc2_title:"Außerhalb der Öffnungszeiten",vc2_desc:"Die besten Leads kommen um 22 Uhr oder sonntags. Ohne Verfügbarkeit werden sie kalt.",
-  vc3_title:"Personal = hohe Fixkosten",vc3_desc:"Ein Vollzeit-Rezeptionist kostet 24.000€/Jahr und arbeitet nur 8h in einer Sprache.",
-  benefits_tag:"Die Lösung",benefits_title:"Ihr Unternehmen auf <em>Autopilot</em>",
-  benefits_sub:"FlowSuite setzt digitale Mitarbeiter ein, die repetitive Arbeit 24/7 erledigen.",
-  b1t:"Automatische Erfassung",b1d:"Flow antwortet in <30s, qualifiziert Leads und speichert sie in Ihrem CRM.",
-  b2t:"Mehrsprachig nativ",b2d:"Spanisch, Englisch, Französisch, Deutsch, Italienisch — fließend und natürlich.",
-  b3t:"In 48h live",b3d:"Kein Code, kein IT. Konfiguriert und verbunden in weniger als zwei Tagen.",
-  b4t:"Echtzeit-Daten",b4d:"Jedes Gespräch generiert Daten zur Verbesserung Ihres Angebots.",
-  b5t:"Sprache + Text + Web",b5d:"Telefonanrufe, Web-Chat und WhatsApp — ein Agent, alle Kanäle.",
-  b6t:"DSGVO/nDSG konform",b6d:"Infrastruktur konform mit europäischen und Schweizer Datenschutzvorschriften.",
-  how_tag:"Der Prozess",how_title:"Von <strong>null</strong> auf laufend in <em>4 Schritten</em>",
-  how_sub:"Keine Reibung, keine technischen Teams, keine monatelange Wartezeit.",
-  s1t:"Diagnose",s1d:"Wir verstehen Ihr Unternehmen in einem 30-minütigen Anruf.",
-  s2t:"Konfiguration",s2d:"Wir erstellen Ihren KI-Agenten mit Stimme und Wissen Ihres Unternehmens.",
-  s3t:"Integration",s3d:"Verbindung mit Ihrer Telefonnummer, CRM und bestehenden Tools.",
-  s4t:"Launch",s4d:"Ihr digitaler Mitarbeiter nimmt die Arbeit auf. Wir optimieren kontinuierlich.",
-  demo_tag:"Flow live",demo_title:"Sprechen Sie jetzt mit <em>Flow</em>",
-  demo_sub:"Flow ist auf dieser Seite, bereit zu antworten.",
-  demo_email:"✉️ E-Mail",demo_call:"📞 Anrufen",
-  chat1:"👋 Hallo, ich bin Flow. Wie kann ich Ihnen helfen?",
-  chat2:"Was kostet das?",
-  chat3:"Pläne ab 99€/Monat. Wie viele Anrufe erhält Ihr Unternehmen?",
-  pricing_tag:"Pläne",pricing_title:"Der richtige Preis für <em>jede Phase</em>",pricing_sub:"Keine Bindung. Kündigen Sie jederzeit.",
-  p1name:"Präsenz",p1desc:"Für Unternehmen, die 24/7 verfügbar sein und keinen Anruf verpassen wollen.",p1chf:"129 CHF/Monat in der Schweiz",
-  p1f1:"KI-Sprachagent 24/7",p1f2:"Bis zu 200 Anrufe/Monat",p1f3:"Chat-Widget auf Ihrer Website",p1f4:"Automatische Lead-Registrierung",p1f5:"1 Sprache inklusive",
-  p2name:"Erfassung",p2desc:"Für wachsende Unternehmen, die mehr automatisierte Leads und Verkäufe wollen.",p2chf:"229 CHF/Monat in der Schweiz",
-  p2f1:"Alles aus Präsenz",p2f2:"Bis zu 600 Anrufe/Monat",p2f3:"Integriertes CRM",p2f4:"3 Sprachen inklusive",p2f5:"WhatsApp/E-Mail-Benachrichtigungen",p2f6:"Text-Agent inklusive",
-  p3name:"Suite",p3desc:"Komplettlösung zur Automatisierung aller Kundenprozesse.",p3chf:"389 CHF/Monat in der Schweiz",
-  p3f1:"Alles aus Erfassung",p3f2:"Unbegrenzte Anrufe",p3f3:"5 Sprachen + Dialekte",p3f4:"Individuelle Integrationen",p3f5:"Erweitertes Dashboard",p3f6:"Dedizierter Prioritätssupport",
-  pmo:"/Monat",pbest:"Am beliebtesten",pcta:"Jetzt starten",
-  risk1:"Keine Bindung",risk2:"Live in 48h",risk3:"Support inklusive",risk4:"Jederzeit kündbar",
-  faq_tag:"FAQ",faq_title:"Häufig gestellte <em>Fragen</em>",
-  fq1:"Brauche ich technisches Wissen?",fa1:"Nein. Wir übernehmen alles — Einrichtung, Integration und Wartung.",
-  fq2:"Wie lange dauert die Einrichtung?",fa2:"48h nach dem Diagnosegespräch.",
-  fq3:"Kann ich jederzeit kündigen?",fa3:"Ja. Keine Bindung. Kündigung mit 30 Tagen Vorankündigung.",
-  fq4:"Klingt der Agent natürlich?",fa4:"Ja. Wir verwenden neuronale Stimmen der neuesten Generation.",
-  fq5:"DSGVO/nDSG konform?",fa5:"Ja. Infrastruktur konform mit europäischen und Schweizer Datenschutzvorschriften.",
-  cta_tag:"Starten Sie heute",cta_title:"Ihre Konkurrenz nutzt bereits KI.<br><em>Und Sie?</em>",
-  cta_sub:"Jeden Tag ohne Flow verlieren Sie Leads. Starten Sie in 48h, ohne Vertrag.",
-  cta_btn1:"✉️ Jetzt kontaktieren",cta_btn2:"📞 FlowSuite anrufen",
-  f_desc:"KI-Digitalmitarbeiter für KMUs. Echte Automatisierung, echte Ergebnisse.",
-  f_product:"Produkt",f_sectors:"Branchen",f_legal:"Rechtliches",
-  f_hotel:"Hotels & Tourismus",f_health:"Gesundheit & Kliniken",f_re:"Immobilien",f_retail:"Einzelhandel",
-  f_privacy:"Datenschutz",f_terms:"Bedingungen",f_imprint:"Impressum",f_gdpr:"DSGVO/nDSG"
-}
-};
-
-/* ── APPLY LANGUAGE — bulletproof ────────────────────────── */
-let lang = 'es';
-
-function applyLang(l) {
-  if (!T[l]) return;
-  lang = l;
-  const t = T[l];
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const k = el.getAttribute('data-i18n');
-    if (k && t[k] !== undefined) el.innerHTML = t[k];
-  });
-  // Mark active buttons — ALL .lbtn elements
-  document.querySelectorAll('.lbtn').forEach(b => {
-    b.classList.toggle('on', b.getAttribute('data-lang') === l);
-  });
-  document.documentElement.lang = l;
-}
-
-// Attach event listeners via delegation on both switchers
-document.addEventListener('click', function(e) {
-  const btn = e.target.closest('.lbtn');
-  if (btn && btn.hasAttribute('data-lang')) {
-    applyLang(btn.getAttribute('data-lang'));
-    // Close mobile menu if open
-    if (btn.closest('#mob-menu')) closeMob();
-  }
-});
-
-// Initialize
-applyLang('es');
-
-/* ── MOBILE MENU ─────────────────────────────────────────── */
-const hbg = document.getElementById('hbg');
-const mobMenu = document.getElementById('mob-menu');
-
-function openMob() { mobMenu.classList.add('open'); hbg.classList.add('open'); }
-function closeMob() { mobMenu.classList.remove('open'); hbg.classList.remove('open'); }
-function toggleMob() { mobMenu.classList.contains('open') ? closeMob() : openMob(); }
-
-hbg.addEventListener('click', toggleMob);
-
-// Close when clicking menu links
-document.querySelectorAll('[data-close]').forEach(el => {
-  el.addEventListener('click', closeMob);
-});
-
-// Close on outside click
-document.addEventListener('click', function(e) {
-  if (!hbg.contains(e.target) && !mobMenu.contains(e.target)) closeMob();
-});
-
-/* ── HEADER SCROLL ──────────────────────────────────────── */
-const hdr = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  hdr.classList.toggle('scrolled', window.scrollY > 48);
-}, { passive: true });
-
-/* ── SCROLL REVEAL ──────────────────────────────────────── */
-const ro = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-
-/* ── SMOOTH SCROLL ──────────────────────────────────────── */
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', function(e) {
-    const id = this.getAttribute('href');
-    if (id === '#') return;
-    const t = document.querySelector(id);
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-  });
-});
-
-/* ── FAQ ACCORDION ──────────────────────────────────────── */
-document.querySelectorAll('.faq-q').forEach(q => {
-  q.addEventListener('click', function() {
-    const item = this.closest('.faq-item');
-    // close others
-    document.querySelectorAll('.faq-item.open').forEach(i => { if (i !== item) i.classList.remove('open'); });
-    item.classList.toggle('open');
-  });
-});
-
-/* ── ANIMATED CHAT ──────────────────────────────────────── */
-(function() {
-  const chat = document.getElementById('demo-chat');
-  if (!chat) return;
-  const typing = chat.querySelector('.typing');
-  const msgs = chat.querySelectorAll('.msg');
-  let step = 0;
-  msgs.forEach(m => m.style.opacity = '0');
-  function showNext() {
-    if (step < msgs.length) {
-      msgs[step].style.transition = 'opacity .4s ease';
-      msgs[step].style.opacity = '1';
-      step++;
-      setTimeout(showNext, 1800);
-    } else {
-      step = 0;
-      setTimeout(() => {
-        msgs.forEach(m => m.style.opacity = '0');
-        setTimeout(showNext, 600);
-      }, 4000);
+  // 1. DICCIONARIO COMPLETO (ES, EN, FR, DE)
+  const translations = {
+    es: {
+      badge: "Disponible 24/7",
+      h1_line1: "Tu negocio no descansa,",
+      h1_line2: "nosotros tampoco.",
+      hero_desc: "¿Sientes que el día no tiene suficientes horas para atender a tus clientes y, al mismo tiempo, hacer crecer tu marca? En FlowSuite, somos tu equipo virtual de expertos disponible 24/7. Mientras tú te enfocas en lo que mejor sabes hacer, nosotros nos encargamos de que el motor de tu negocio nunca se detenga.",
+      btn_chat: "Hablar con FLOW",
+      btn_more: "Saber más",
+      contact: "Contacto",
+      benefits_title: "¿Qué hacemos por ti?",
+      benefits_sub: "No solo mejoramos tu presencia online; construimos un ecosistema que trabaja para ti.",
+      card1_title: "Venta en Piloto Automático",
+      card1_desc: "Convertimos leads en clientes reales mientras duermes, diseñas o consultas. Nuestro agente FLOW califica y seduce 24/7.",
+      card2_title: "Marketing de Precisión",
+      card2_desc: "Automatizamos tus flujos de comunicación para que ningún prospecto se quede en el olvido. Seguimiento inteligente.",
+      card3_title: "Resultados Sólidos",
+      card3_desc: "Transformamos clics en clientes satisfechos y procesos manuales en ingresos recurrentes. Escala sin agotarte.",
+      quote: "\"Deja de perseguir clientes y permite que ellos te encuentren a ti.\"",
+      btn_start: "Empezar Ahora",
+      link_privacy: "Privacidad",
+      link_terms: "Términos"
+    },
+    en: {
+      badge: "Available 24/7",
+      h1_line1: "Your business never sleeps,",
+      h1_line2: "neither do we.",
+      hero_desc: "Feel like there aren't enough hours in the day to attend to your clients and grow your brand? At FlowSuite, we are your virtual team of experts available 24/7. While you focus on what you do best, we ensure your business engine never stops.",
+      btn_chat: "Chat with FLOW",
+      btn_more: "Learn More",
+      contact: "Contact",
+      benefits_title: "What do we do for you?",
+      benefits_sub: "We don't just improve your online presence; we build an ecosystem that works for you.",
+      card1_title: "Autopilot Sales",
+      card1_desc: "We convert leads into real clients while you sleep, design, or consult. Our agent FLOW qualifies and seduces 24/7.",
+      card2_title: "Precision Marketing",
+      card2_desc: "We automate your communication flows so no prospect is left forgotten. Intelligent follow-up.",
+      card3_title: "Solid Results",
+      card3_desc: "We transform clicks into satisfied clients and manual processes into recurring revenue. Scale without burnout.",
+      quote: "\"Stop chasing clients and let them find you.\"",
+      btn_start: "Start Now",
+      link_privacy: "Privacy",
+      link_terms: "Terms"
+    },
+    fr: {
+      badge: "Disponible 24/7",
+      h1_line1: "Votre entreprise ne dort jamais,",
+      h1_line2: "nous non plus.",
+      hero_desc: "Vous sentez que la journée n'a pas assez d'heures pour vos clients et faire grandir votre marque ? Chez FlowSuite, nous sommes votre équipe virtuelle d'experts disponible 24/7. Pendant que vous vous concentrez sur votre cœur de métier, nous veillons à ce que le moteur de votre business ne s'arrête jamais.",
+      btn_chat: "Parler avec FLOW",
+      btn_more: "En savoir plus",
+      contact: "Contact",
+      benefits_title: "Que faisons-nous pour vous ?",
+      benefits_sub: "Nous n'améliorons pas seulement votre présence en ligne ; nous construisons un écosystème qui travaille pour vous.",
+      card1_title: "Vente en Pilote Automatique",
+      card1_desc: "Nous transformons les leads en clients réels pendant que vous dormez. Notre agent FLOW qualifie et séduit 24/7.",
+      card2_title: "Marketing de Précision",
+      card2_desc: "Nous automatisons vos flux de communication pour qu'aucun prospect ne soit oublié. Suivi intelligent.",
+      card3_title: "Résultats Solides",
+      card3_desc: "Nous transformons les clics en clients satisfaits et les processus manuels en revenus récurrents. Grandissez sans vous épuiser.",
+      quote: "\"Arrêtez de courir après les clients, laissez-les vous trouver.\"",
+      btn_start: "Commencer Maintenant",
+      link_privacy: "Confidentialité",
+      link_terms: "Conditions"
+    },
+    de: {
+      badge: "Verfügbar 24/7",
+      h1_line1: "Ihr Geschäft schläft nie,",
+      h1_line2: "wir auch nicht.",
+      hero_desc: "Haben Sie das Gefühl, der Tag hat nicht genug Stunden für Kunden und Wachstum? Bei FlowSuite sind wir Ihr virtuelles Expertenteam, 24/7 verfügbar. Während Sie sich auf das konzentrieren, was Sie am besten können, sorgen wir dafür, dass Ihr Motor niemals stoppt.",
+      btn_chat: "Mit FLOW sprechen",
+      btn_more: "Mehr erfahren",
+      contact: "Kontakt",
+      benefits_title: "Was tun wir für Sie?",
+      benefits_sub: "Wir verbessern nicht nur Ihre Online-Präsenz; wir bauen ein Ökosystem, das für Sie arbeitet.",
+      card1_title: "Verkauf im Autopiloten",
+      card1_desc: "Wir verwandeln Leads in echte Kunden, während Sie schlafen. Unser Agent FLOW qualifiziert und überzeugt rund um die Uhr.",
+      card2_title: "Präzisions-Marketing",
+      card2_desc: "Wir automatisieren Ihre Kommunikationsabläufe, damit kein Interessent vergessen wird. Intelligentes Follow-up.",
+      card3_title: "Solide Ergebnisse",
+      card3_desc: "Wir verwandeln Klicks in zufriedene Kunden und manuelle Prozesse in wiederkehrende Einnahmen. Skalieren Sie ohne Stress.",
+      quote: "\"Hören Sie auf, Kunden zu jagen, und lassen Sie sie Sie finden.\"",
+      btn_start: "Jetzt Starten",
+      link_privacy: "Datenschutz",
+      link_terms: "AGB"
     }
+  };
+
+  // 2. FUNCIÓN DE CAMBIO
+  function setLang(lang) {
+    // Actualizar botones
+    document.querySelectorAll('.lbtn').forEach(b => b.classList.remove('on'));
+    document.getElementById(`btn-${lang}`).classList.add('on');
+
+    // Actualizar textos
+    const t = translations[lang];
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (t[key]) el.innerText = t[key];
+    });
+
+    // Guardar preferencia
+    localStorage.setItem('flow_lang', lang);
+    document.documentElement.lang = lang;
+
+    // IMPORTANTE: Avisar al agente FLOW (Snowie) del cambio de idioma
+    // Esto asegura que si abren el chat ahora, hable en el idioma seleccionado
+    window.flowAgentLanguage = lang; 
+    console.log(`[FlowSuite] Idioma cambiado a: ${lang}`);
   }
-  setTimeout(showNext, 800);
-})();
+
+  // 3. DETECCIÓN INICIAL
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('flow_lang') || 'es';
+    setLang(savedLang);
+  });
+
+  // 4. FUNCIÓN PARA ABRIR CHAT (Simulada)
+  function openChat() {
+    // Aquí iría el código real para abrir el widget de Snowie
+    // Ejemplo: document.querySelector('#snowie-launcher').click();
+    alert("Abriendo agente FLOW en idioma: " + window.flowAgentLanguage.toUpperCase());
+  }
+  
+  // Header Scroll Effect
+  window.addEventListener('scroll', () => {
+    const header = document.getElementById('header');
+    if (window.scrollY > 50) header.classList.add('scrolled');
+    else header.classList.remove('scrolled');
+  });
 </script>
+
+<!-- EMBED DE SNOWIE (FLOW) -->
+<!-- Pega aquí tu script de Snowie. Asegúrate de que el agente se llame FLOW -->
+<div id="snowie-embed"></div> 
+
 </body>
 </html>
